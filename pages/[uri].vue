@@ -27,6 +27,7 @@ await getPost({ id: route.params.uri }).then((d) => {
     throw createError({
       statusCode: 404,
       statusMessage: "Page ou article introuvable",
+      fatal: true,
     });
   }
 });

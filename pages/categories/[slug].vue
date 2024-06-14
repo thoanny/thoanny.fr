@@ -16,6 +16,7 @@ await getCategory({ id: route.params.slug }).then((d) => {
     throw createError({
       statusCode: 404,
       statusMessage: "Catégorie introuvable",
+      fatal: true,
     });
   }
 

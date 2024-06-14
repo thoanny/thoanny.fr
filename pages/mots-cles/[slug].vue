@@ -16,6 +16,7 @@ await getTag({ id: route.params.slug }).then((d) => {
     throw createError({
       statusCode: 404,
       statusMessage: "Mot-clé introuvable",
+      fatal: true,
     });
   }
 
