@@ -18,6 +18,12 @@ useHead({
 </script>
 
 <template>
+  <SearchEngineOptimization
+    title="Twitch"
+    description="C'est toujours un plaisir que j'ai, de partager avec vous mes sessions
+          de jeux, de découvertes et de télétravail sur ma chaîne Twitch."
+  />
+
   <div>
     <div
       class="mockup-browser border border-secondary bg-secondary xl:mt-[calc(-37rem_+_8rem)] mb-12"
@@ -41,8 +47,8 @@ useHead({
       <div class="text-lg">
         <p class="mt-4">
           C'est toujours un plaisir que j'ai, de partager avec vous mes sessions
-          de jeux et découvertes. Je tiens à toutes et tous vous remercier, pour
-          votre présence et votre soutien&nbsp;!
+          de jeux, de découvertes et de télétravail. Je tiens à toutes et tous
+          vous remercier, pour votre présence et votre soutien&nbsp;!
         </p>
       </div>
     </div>

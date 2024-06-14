@@ -12,6 +12,11 @@ await getTPotes().then((d) => {
 </script>
 
 <template>
+  <SearchEngineOptimization
+    title="T-potes"
+    description="Merci à tous les T-potes qui me soutiennent dans mes projets, que ce soit sur Twitch ou Patreon."
+  />
+
   <div class="text-center max-w-2xl mx-auto">
     <h1 class="text-4xl font-bold text-primary mt-12 mb-8">
       🔥 Les T-Potes 🔥

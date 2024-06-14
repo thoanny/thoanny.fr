@@ -37,6 +37,8 @@ const loadMore = async () => {
 </script>
 
 <template>
+  <SearchEngineOptimization title="Blog" />
+
   <div v-if="data.posts.length > 0">
     <PostHero v-if="data.hero" :post="data.hero" />
     <PostCard v-for="post in data.posts" :post="post" :key="post.id" />

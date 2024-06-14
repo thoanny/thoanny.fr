@@ -37,6 +37,7 @@ const loadMore = async () => {
   }).then((d) => {
     data.value = {
       loading: false,
+      category: data.value.category,
       posts: data.value.posts.concat(d.category.posts.nodes),
       hasNextPage: d.category.posts.pageInfo.hasNextPage,
       endCursor: d.category.posts.pageInfo.endCursor,
@@ -46,6 +47,8 @@ const loadMore = async () => {
 </script>
 
 <template>
+  <SearchEngineOptimization :title="`Catégorie : ${data.category}`" />
+
   <div v-if="data.posts.length > 0">
     <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">
       Catégorie&nbsp;: {{ data.category }}

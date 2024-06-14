@@ -37,6 +37,7 @@ const loadMore = async () => {
   }).then((d) => {
     data.value = {
       loading: false,
+      tag: data.value.tag,
       posts: data.value.posts.concat(d.tag.posts.nodes),
       hasNextPage: d.tag.posts.pageInfo.hasNextPage,
       endCursor: d.tag.posts.pageInfo.endCursor,
@@ -46,6 +47,8 @@ const loadMore = async () => {
 </script>
 
 <template>
+  <SearchEngineOptimization :title="`Mot-clé : ${data.tag}`" />
+
   <div v-if="data.posts.length > 0">
     <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">
       Mot-clé&nbsp;: {{ data.tag }}

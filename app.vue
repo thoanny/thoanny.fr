@@ -1,3 +1,11 @@
+<script setup>
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Thoanny` : "Thoanny";
+  },
+});
+</script>
+
 <template>
   <main class="dark:bg-zinc-900 bg-gray-100">
     <AppHeader />

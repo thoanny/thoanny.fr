@@ -39,6 +39,12 @@ useHead({
 </script>
 
 <template>
+  <SearchEngineOptimization
+    :title="data.content.title"
+    :description="data.content.excerpt"
+    :image="data.content.featuredImage?.node.mediaItemUrl"
+  />
+
   <div>
     <article :class="data.type" class="text-lg">
       <ContentHeader :type="data.type" :content="data.content" />
