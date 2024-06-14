@@ -12,10 +12,12 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.12.1",
+    "string-strip-html": "^13.4.8",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "daisyui": "^4.12.2"
+    "daisyui": "^4.12.2",
+    "sass": "^1.77.5"
   }
 }
