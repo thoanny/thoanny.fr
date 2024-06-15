@@ -51,7 +51,9 @@ const loadMore = async () => {
   <SearchEngineOptimization :title="`Catégorie : ${data.category}`" />
 
   <div v-if="data.posts.length > 0">
-    <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">
+    <h1
+      class="text-4xl mb-6 font-bold dark:text-gray-200 flex items-center gap-2"
+    >
       Catégorie&nbsp;: {{ data.category }}
     </h1>
     <PostCard v-for="post in data.posts" :post="post" :key="post.id" />

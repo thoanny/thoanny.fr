@@ -1,8 +1,6 @@
 <script setup>
+import { IconCalendarMonth, IconFolderOpen } from "@tabler/icons-vue";
 import { stripExcerpt } from "~/utils/strip-html.js";
-
-import IconCalendar from "./icons/IconCalendar.vue";
-import IconFolder from "./icons/IconFolder.vue";
 
 defineProps(["post"]);
 </script>
@@ -56,7 +54,7 @@ defineProps(["post"]);
         class="flex flex-wrap gap-4 text-sm uppercase font-semibold text-gray-400 mb-4"
       >
         <span class="date flex items-center gap-1">
-          <IconCalendar class="w-5 h-5" />
+          <IconCalendarMonth class="w-6 h-6" stroke-width="1.5" />
           {{
             new Date(Date.parse(post.date))
               .toLocaleDateString("FR-fr", {
@@ -69,7 +67,7 @@ defineProps(["post"]);
         </span>
 
         <span class="flex items-center gap-1" v-if="post.categories">
-          <IconFolder class="h-5 w-5" />
+          <IconFolderOpen class="h-6 w-6" stroke-width="1.5" />
           <span v-for="category in post.categories.nodes" :key="category.id">
             {{ category.name }}
           </span>

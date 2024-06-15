@@ -1,4 +1,5 @@
 <script setup>
+import { IconFlame } from "@tabler/icons-vue";
 import { getTPotes } from "~/utils/graphql.js";
 
 const data = ref({ loading: true, tpotes: [] });
@@ -18,8 +19,12 @@ await getTPotes().then((d) => {
   />
 
   <div class="text-center max-w-2xl mx-auto">
-    <h1 class="text-4xl font-bold text-primary mt-12 mb-8">
-      🔥 Les T-Potes 🔥
+    <h1
+      class="text-4xl font-bold text-primary mt-12 mb-8 flex items-center justify-center gap-2"
+    >
+      <IconFlame class="h-12 w-12" stroke-width="1.5" />
+      Les T-Potes
+      <IconFlame class="h-12 w-12" stroke-width="1.5" />
     </h1>
     <p class="text-lg mb-8">
       Merci à tous les T-potes qui me soutiennent dans mes projets, que ce soit

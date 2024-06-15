@@ -13,9 +13,11 @@
     "@nuxtjs/algolia": "^1.10.2",
     "@nuxtjs/seo": "^2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@tabler/icons-vue": "^3.6.0",
     "nuxt": "^3.12.1",
     "string-strip-html": "^13.4.8",
     "vue": "^3.4.27",
+    "vue-matomo": "^4.2.0",
     "vue-router": "^4.3.3"
   },
   "devDependencies": {

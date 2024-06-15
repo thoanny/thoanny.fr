@@ -1,5 +1,5 @@
 <script setup>
-import { excerpt } from "~/utils/text.js";
+import { IconSearch } from "@tabler/icons-vue";
 
 const indexName = "thoanny_posts_post";
 const algolia = useAlgoliaRef();
@@ -20,7 +20,11 @@ const getSlug = (permalink) => {
   <div>
     <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">Chercher</h1>
     <ais-instant-search :index-name="indexName" :search-client="algolia">
-      <ais-search-box />
+      <ais-search-box placeholder="Chercher un article...">
+        <template v-slot:submit-icon>
+          <IconSearch class="h-6 w-6 text-white" stroke-width="2" />
+        </template>
+      </ais-search-box>
       <ais-hits>
         <template v-slot:item="{ item }">
           <NuxtLink
@@ -65,9 +69,5 @@ const getSlug = (permalink) => {
 
 .ais-SearchBox-submit {
   @apply btn btn-primary;
-
-  svg {
-    @apply w-4 h-4;
-  }
 }
 </style>

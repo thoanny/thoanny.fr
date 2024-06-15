@@ -1,12 +1,15 @@
 <script setup>
-import IconCircle from "./icons/IconCircle.vue";
-import IconFire from "./icons/IconFire.vue";
-import IconGame from "./icons/IconGame.vue";
-import IconScroll from "./icons/IconScroll.vue";
-import IconTools from "./icons/IconTools.vue";
-import IconTv from "./icons/IconTv.vue";
-import IconPatreon from "./icons/IconPatreon.vue";
-import IconSearch from "./icons/IconSearch.vue";
+import {
+  IconNotebook,
+  IconTools,
+  IconDeviceGamepad2,
+  IconBroadcast,
+  IconDeviceTv,
+  IconFlame,
+  IconSearch,
+  IconBrandPatreon,
+  IconBrandPatreonFilled,
+} from "@tabler/icons-vue";
 
 const modal = ref();
 
@@ -16,7 +19,7 @@ const links = [
     to: { name: "index" },
     title: "Blog",
     hideTitle: false,
-    icon: IconScroll,
+    icon: IconNotebook,
   },
   {
     id: "projets",
@@ -30,28 +33,28 @@ const links = [
     to: { name: "categories-slug", params: { slug: "jeux-video" } },
     title: "Jeux vidéo",
     hideTitle: false,
-    icon: IconGame,
+    icon: IconDeviceGamepad2,
   },
   {
     id: "streaming",
     to: { name: "categories-slug", params: { slug: "streaming" } },
     title: "Streaming",
     hideTitle: false,
-    icon: IconCircle,
+    icon: IconBroadcast,
   },
   {
     id: "twitch",
     to: { name: "twitch" },
     title: "Twitch",
     hideTitle: false,
-    icon: IconTv,
+    icon: IconDeviceTv,
   },
   {
     id: "t-potes",
     to: { name: "t-potes" },
     title: "T-potes",
     hideTitle: false,
-    icon: IconFire,
+    icon: IconFlame,
   },
   {
     id: "chercher",
@@ -82,7 +85,7 @@ const links = [
           :to="link.to"
           class="flex gap-2 items-center group"
         >
-          <component :is="link.icon" class="h-6 w-6" />
+          <component :is="link.icon" class="h-8 w-8" stroke-width="1.5" />
           <span
             class="group-hover:underline group-[.router-link-active]:underline underline-offset-2 decoration-2"
             v-if="!link.hideTitle"
@@ -97,7 +100,7 @@ const links = [
           target="_blank"
           rel="noreferrer"
         >
-          <IconPatreon class="h-5 w-5 text-primary" />
+          <IconBrandPatreonFilled class="h-7 w-7 text-primary" />
           Me soutenir
         </a>
       </nav>
@@ -139,7 +142,11 @@ const links = [
             @click="modal.close()"
             class="text-lg dark:hover:bg-zinc-700 dark:active:text-neutral dark:active:bg-primary flex gap-3"
           >
-            <component :is="link.icon" class="h-6 w-6 text-primary" />
+            <component
+              :is="link.icon"
+              class="h-6 w-6 text-primary"
+              stroke-width="2"
+            />
             {{ link.title }}
           </NuxtLink>
         </li>
@@ -150,7 +157,7 @@ const links = [
             rel="noreferrer"
             class="text-lg dark:hover:bg-zinc-700 dark:active:text-neutral dark:active:bg-primary flex gap-3"
           >
-            <IconPatreon class="h-6 w-6 text-primary" />
+            <IconBrandPatreon class="h-6 w-6 text-primary" stroke-width="2" />
             Me soutenir
           </a>
         </li>

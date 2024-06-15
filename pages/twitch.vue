@@ -1,4 +1,5 @@
 <script setup>
+import { IconHeart, IconGift } from "@tabler/icons-vue";
 const data = ref({ streamelements: [], gifts: [] });
 
 data.value = {
@@ -43,7 +44,13 @@ useHead({
       />
     </div>
     <div class="mx-auto max-w-2xl text-center mb-12">
-      <h2 class="text-3xl font-bold text-primary">💜 Merci 💜</h2>
+      <h2
+        class="text-3xl font-bold text-primary flex items-center justify-center gap-2"
+      >
+        <IconHeart class="h-12 w-12" stroke-width="1.5" />
+        Merci
+        <IconHeart class="h-12 w-12" stroke-width="1.5" />
+      </h2>
       <div class="text-lg">
         <p class="mt-4">
           C'est toujours un plaisir que j'ai, de partager avec vous mes sessions
@@ -83,7 +90,13 @@ useHead({
     </div>
 
     <div class="max-w-2xl mx-auto mb-12 mt-20 text-lg text-center">
-      <h2 class="text-3xl font-bold text-primary">🎁 Récompenses 🎁</h2>
+      <h2
+        class="text-3xl font-bold text-primary flex items-center justify-center gap-2"
+      >
+        <IconGift class="h-12 w-12" stroke-width="1.5" />
+        Récompenses
+        <IconGift class="h-12 w-12" stroke-width="1.5" />
+      </h2>
       <p class="mt-4">
         En participant à mes lives, tu gagnes des points de chaîne Twitch
         (T-coins). Grâce à ces points, tu peux lancer des sons et acheter des

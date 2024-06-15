@@ -73,7 +73,9 @@ useHead({
       </div>
 
       <div v-if="data.content.tags">
-        <span class="tags text-sm flex flex-wrap justify-center gap-4">
+        <span
+          class="tags text-sm flex flex-wrap justify-center items-center gap-4"
+        >
           <NuxtLink
             v-for="tag in data.content.tags.nodes"
             :key="tag.id"

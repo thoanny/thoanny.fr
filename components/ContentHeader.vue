@@ -1,13 +1,14 @@
 <script setup>
+import {
+  IconArrowNarrowLeft,
+  IconCalendarMonth,
+  IconFolderOpen,
+  IconBrandX,
+  IconBrandFacebook,
+  IconCornerLeftUp,
+} from "@tabler/icons-vue";
 import { stripImageCaption } from "~/utils/strip-html.js";
 import { nbsp } from "~/utils/text.js";
-
-import IconArrowTop from "./icons/IconArrowTop.vue";
-import IconArrowLeft from "./icons/IconArrowLeft.vue";
-import IconCalendar from "./icons/IconCalendar.vue";
-import IconFacebook from "./icons/IconFacebook.vue";
-import IconFolder from "./icons/IconFolder.vue";
-import IconTwitter from "./icons/IconTwitter.vue";
 
 const route = useRoute();
 const cleanUrl = "https://thoanny.fr" + route.path;
@@ -37,10 +38,10 @@ defineProps(["type", "content"]);
             :height="content.featuredImage.node.mediaDetails.height"
           />
           <div
-            class="flex xl:hidden text-sm text-gray-400 gap-2 shrink-0 justify-center mb-6 mt-4"
+            class="flex xl:hidden text-sm text-gray-400 gap-2 shrink-0 justify-center mb-6 mt-4 items-center"
             v-if="content.featuredImage.node.caption"
           >
-            <IconArrowTop class="w-5 h-5" />
+            <IconCornerLeftUp class="w-4 h-4" stroke-width="2" />
             <div
               v-html="stripImageCaption(content.featuredImage.node.caption)"
             ></div>
@@ -60,7 +61,10 @@ defineProps(["type", "content"]);
             class="hidden xl:flex text-sm text-white gap-2 opacity-75 w-full"
             v-if="content.featuredImage && content.featuredImage.node.caption"
           >
-            <IconArrowLeft class="w-5 h-5 inline shrink-0" />
+            <IconArrowNarrowLeft
+              class="w-6 h-6 inline shrink-0"
+              stroke-width="1.5"
+            />
             <div
               v-html="stripImageCaption(content.featuredImage.node.caption)"
             ></div>
@@ -69,8 +73,11 @@ defineProps(["type", "content"]);
           <ul
             class="w-full justify-center xl:justify-start flex flex-wrap gap-4 whitespace-nowrap text-sm uppercase font-semibold text-gray-500 xl:text-white"
           >
-            <li class="flex gap-2">
-              <IconCalendar class="h-5 w-5 text-gray-400 xl:text-white" />
+            <li class="flex gap-2 items-center">
+              <IconCalendarMonth
+                class="h-6 w-6 text-gray-400 xl:text-white"
+                stroke-width="1.5"
+              />
               {{
                 new Date(Date.parse(content.date)).toLocaleDateString("FR-fr", {
                   year: "numeric",
@@ -79,8 +86,11 @@ defineProps(["type", "content"]);
                 })
               }}
             </li>
-            <li class="flex gap-2" v-if="content.categories">
-              <IconFolder class="h-5 w-5 text-gray-400 xl:text-white" />
+            <li class="flex gap-2 items-center" v-if="content.categories">
+              <IconFolderOpen
+                class="h-6 w-6 text-gray-400 xl:text-white"
+                stroke-width="1.5"
+              />
               <NuxtLink
                 v-for="category in content.categories.nodes"
                 :key="category.id"
@@ -105,7 +115,7 @@ defineProps(["type", "content"]);
                 target="_blank"
                 class="btn btn-circle btn-secondary text-white dark:text-zinc-900"
               >
-                <IconTwitter class="w-5 h-5" />
+                <IconBrandX class="w-7 h-7" stroke-width="1.5" />
               </a>
             </li>
             <li>
@@ -118,7 +128,7 @@ defineProps(["type", "content"]);
                 target="_blank"
                 class="btn btn-circle btn-secondary text-white dark:text-zinc-900"
               >
-                <IconFacebook class="h-5 w-5" />
+                <IconBrandFacebook class="h-7 w-7" stroke-width="1.5" />
               </a>
             </li>
           </ul>

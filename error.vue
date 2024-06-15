@@ -1,8 +1,5 @@
 <script setup>
-import IconArrowLeft from "./components/icons/IconArrowLeft.vue";
-
 defineProps(["error"]);
-
 const handleError = () => clearError({ redirect: "/" });
 </script>
 
@@ -23,7 +20,6 @@ const handleError = () => clearError({ redirect: "/" });
       @click="handleError"
       class="btn btn-primary gap-2 mt-4"
     >
-      <IconArrowLeft class="h-4 w-4" />
       Retourner à l'accueil
     </button>
   </div>
