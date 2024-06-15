@@ -6,6 +6,7 @@ import IconScroll from "./icons/IconScroll.vue";
 import IconTools from "./icons/IconTools.vue";
 import IconTv from "./icons/IconTv.vue";
 import IconPatreon from "./icons/IconPatreon.vue";
+import IconSearch from "./icons/IconSearch.vue";
 
 const modal = ref();
 
@@ -14,37 +15,50 @@ const links = [
     id: "blog",
     to: { name: "index" },
     title: "Blog",
+    hideTitle: false,
     icon: IconScroll,
   },
   {
     id: "projets",
     to: { name: "categories-slug", params: { slug: "projets" } },
     title: "Projets",
+    hideTitle: false,
     icon: IconTools,
   },
   {
     id: "jeux-video",
     to: { name: "categories-slug", params: { slug: "jeux-video" } },
     title: "Jeux vidéo",
+    hideTitle: false,
     icon: IconGame,
   },
   {
     id: "streaming",
     to: { name: "categories-slug", params: { slug: "streaming" } },
     title: "Streaming",
+    hideTitle: false,
     icon: IconCircle,
   },
   {
     id: "twitch",
     to: { name: "twitch" },
     title: "Twitch",
+    hideTitle: false,
     icon: IconTv,
   },
   {
     id: "t-potes",
     to: { name: "t-potes" },
     title: "T-potes",
+    hideTitle: false,
     icon: IconFire,
+  },
+  {
+    id: "chercher",
+    to: { name: "chercher" },
+    title: "Chercher",
+    hideTitle: true,
+    icon: IconSearch,
   },
 ];
 </script>
@@ -60,7 +74,7 @@ const links = [
         <img src="@/assets/img/logo.svg" class="w-full h-full" alt="Thoanny" />
       </div>
       <nav
-        class="absolute top-0 right-0 hidden gap-6 h-32 items-center font-semibold text-white uppercase tracking-wider lg:flex"
+        class="absolute top-0 right-0 hidden gap-6 h-32 items-center font-semibold text-white uppercase tracking-wider min-[1030px]:flex"
       >
         <NuxtLink
           v-for="link in links"
@@ -71,6 +85,7 @@ const links = [
           <component :is="link.icon" class="h-6 w-6" />
           <span
             class="group-hover:underline group-[.router-link-active]:underline underline-offset-2 decoration-2"
+            v-if="!link.hideTitle"
           >
             {{ link.title }}
           </span>
@@ -92,7 +107,7 @@ const links = [
   <button
     type="button"
     @click="modal.showModal()"
-    class="btn bg-white btn-circle drawer-button lg:hidden absolute top-6 sm:top-10 right-4 border border-primary shadow"
+    class="btn bg-white btn-circle drawer-button min-[1030px]:hidden absolute top-6 sm:top-10 right-4 border border-primary shadow"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

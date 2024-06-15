@@ -8,3 +8,12 @@ export const nbsp = (str) => {
     }
   });
 };
+
+export const excerpt = (content, words, trailing = "...") => {
+  const list = content.trim().split(" ");
+  const truncate = list.slice(0, words).join(" ");
+  const excerpt = truncate + trailing;
+  const output = list.length > words ? excerpt : content;
+
+  return output;
+};
