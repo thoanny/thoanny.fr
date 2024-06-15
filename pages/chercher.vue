@@ -21,7 +21,6 @@ const getSlug = (permalink) => {
     <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">Chercher</h1>
     <ais-instant-search :index-name="indexName" :search-client="algolia">
       <ais-search-box />
-      <!-- <ais-hits /> -->
       <ais-hits>
         <template v-slot:item="{ item }">
           <NuxtLink
@@ -51,7 +50,6 @@ const getSlug = (permalink) => {
           </NuxtLink>
         </template>
       </ais-hits>
-      <ais-pagination />
     </ais-instant-search>
   </div>
 </template>
@@ -70,26 +68,6 @@ const getSlug = (permalink) => {
 
   svg {
     @apply w-4 h-4;
-  }
-}
-
-.ais-Pagination-list {
-  @apply flex items-center justify-center mt-6 gap-2;
-
-  li span {
-    @apply btn btn-disabled;
-  }
-
-  li {
-    a {
-      @apply btn btn-primary;
-    }
-
-    &.ais-Pagination-item--selected {
-      a {
-        @apply btn-disabled;
-      }
-    }
   }
 }
 </style>
