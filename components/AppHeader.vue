@@ -77,15 +77,15 @@ const links = [
         <img src="@/assets/img/logo.svg" class="w-full h-full" alt="Thoanny" />
       </div>
       <nav
-        class="absolute top-0 right-0 hidden gap-6 h-32 items-center font-semibold text-white uppercase tracking-wider min-[1030px]:flex"
+        class="absolute top-0 right-0 hidden gap-4 h-32 items-center font-semibold text-white uppercase tracking-wider min-[990px]:flex"
       >
         <NuxtLink
           v-for="link in links"
           :key="link.id"
           :to="link.to"
-          class="flex gap-2 items-center group"
+          class="flex gap-1 items-center group"
         >
-          <component :is="link.icon" class="h-8 w-8" stroke-width="1.5" />
+          <component :is="link.icon" class="h-7 w-7" stroke-width="1.75" />
           <span
             class="group-hover:underline group-[.router-link-active]:underline underline-offset-2 decoration-2"
             v-if="!link.hideTitle"
@@ -110,7 +110,7 @@ const links = [
   <button
     type="button"
     @click="modal.showModal()"
-    class="btn bg-white btn-circle drawer-button min-[1030px]:hidden absolute top-6 sm:top-10 right-4 border border-primary shadow"
+    class="btn bg-white btn-circle drawer-button min-[990px]:hidden absolute top-6 sm:top-10 right-4 border border-primary shadow"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
