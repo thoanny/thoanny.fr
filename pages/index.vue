@@ -1,4 +1,5 @@
 <script setup>
+import { IconBrandPatreonFilled } from "@tabler/icons-vue";
 import { getPosts } from "~/utils/graphql.js";
 
 const data = ref({
@@ -34,10 +35,35 @@ const loadMore = async () => {
     };
   });
 };
+
+const { data: patreonPosts, status: patreonStatus } = useFetch("/api/patreon");
 </script>
 
 <template>
   <SearchEngineOptimization title="Blog" />
+
+  <div v-if="patreonStatus !== 'error'" class="mb-8">
+    <h2
+      class="font-bold text-xl sm:text-2xl mb-4 text-primary flex gap-2 items-center"
+    >
+      <IconBrandPatreonFilled class="h-8 w-8 shrink-0 self-start" />
+      Mes derniers articles sur Patreon
+    </h2>
+    <div
+      v-if="patreonStatus === 'pending' && !patreonPosts"
+      class="flex gap-2 items-center font-semibold"
+    >
+      <span class="loading loading-spinner text-primary"></span>
+      Chargement en cours...
+    </div>
+    <div class="flex flex-col gap-2" v-if="patreonPosts">
+      <PatreonPostCard
+        v-for="post in patreonPosts"
+        :post="post"
+        :key="post.id"
+      />
+    </div>
+  </div>
 
   <div v-if="data.posts.length > 0">
     <PostHero v-if="data.hero" :post="data.hero" />
