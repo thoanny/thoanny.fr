@@ -1,4 +1,6 @@
 <script setup>
+import { IconCards } from "@tabler/icons-vue";
+
 const { data: cards, status } = useFetch("/api/cards");
 
 // https://www.youtube.com/watch?v=jXBc0AHZ2Ik
@@ -35,6 +37,26 @@ const handleMouseMove = ($event) => {
 </script>
 
 <template>
+  <div class="text-center max-w-2xl mx-auto">
+    <h1
+      class="text-4xl font-bold text-primary mt-12 mb-8 flex items-center justify-center gap-2"
+    >
+      <IconCards class="h-12 w-12" stroke-width="1.5" />
+      Les T-cards
+      <IconCards class="h-12 w-12" stroke-width="1.5" />
+    </h1>
+    <p class="text-lg mb-8">
+      Ces cartes sont générées via
+      <a
+        href="https://glif.app"
+        target="_blank"
+        class="underline text-primary font-semibold"
+        >glif.app</a
+      >
+      en utilisant ChatGPT ainsi que Flux. Elles sont créées par les viewers de
+      ma chaîne Twitch, par l'intermédiaire des points de chaîne.
+    </p>
+  </div>
   <div
     v-if="status === 'pending' && !cards"
     class="flex gap-2 items-center font-semibold"
@@ -42,7 +64,10 @@ const handleMouseMove = ($event) => {
     <span class="loading loading-spinner text-primary"></span>
     Chargement en cours...
   </div>
-  <div class="grid grid-cols-3 gap-12" v-else-if="cards">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mx-8"
+    v-else-if="cards"
+  >
     <div
       class="card"
       @mousemove="handleMouseMove"
@@ -53,7 +78,7 @@ const handleMouseMove = ($event) => {
     >
       <div class="content-card">
         <img
-          :src="`https://anthony-destenay.fr/projects/twitch/img/${card}`"
+          :src="`https://anthony-destenay.fr/projects/twitch/glif-image.php?id=${card}`"
           class="object-cover w-full h-full"
           alt=""
         />
