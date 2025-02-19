@@ -1,63 +1,92 @@
 <script setup>
-import { IconFlame } from "@tabler/icons-vue";
-import { getTPotes } from "~/utils/graphql.js";
+import { IconFlame, IconHearts } from "@tabler/icons-vue";
 
-const data = ref({ loading: true, tpotes: [] });
+const { data } = await useFetch("https://api.thoanny.fr/tpotes");
 
-await getTPotes().then((d) => {
-  data.value = {
-    loading: false,
-    tpotes: d.tPotes.nodes,
-  };
+const twitchTpotes = computed(() => {
+  return data.value.tpotes.filter((tpote) => tpote.network === "twitch");
+});
+
+const patreonTpotes = computed(() => {
+  return data.value.tpotes.filter((tpote) => tpote.network === "patreon");
+});
+
+useSeoMeta({
+  title: "Les T-potes",
+  ogTitle: "Les T-potes",
+  description:
+    "Merci infiniment à tou·te·s mes abonné·e·s sur Twitch et Patreon !",
+  ogDescription:
+    "Merci infiniment à tou·te·s mes abonné·e·s sur Twitch et Patreon !",
 });
 </script>
 
 <template>
-  <SearchEngineOptimization
-    title="T-potes"
-    description="Merci à tous les T-potes qui me soutiennent dans mes projets, que ce soit sur Twitch ou Patreon."
-  />
-
-  <div class="text-center max-w-2xl mx-auto">
+  <div class="container mx-auto text-center !max-w-2xl">
     <h1
-      class="text-4xl font-bold text-primary mt-12 mb-8 flex items-center justify-center gap-2"
+      class="text-2xl font-bold mb-6 flex items-center justify-center gap-2 text-primary"
     >
       <IconFlame class="h-12 w-12" stroke-width="1.5" />
-      Les T-Potes
+      Les T-potes
       <IconFlame class="h-12 w-12" stroke-width="1.5" />
     </h1>
-    <p class="text-lg mb-8">
-      Merci à tous les T-potes qui me soutiennent dans mes projets, que ce soit
-      sur
+    <p class="mb-4 text-lg">
+      <strong
+        >Merci infiniment à tou·te·s mes abonné·e·s sur Twitch et
+        Patreon !</strong
+      >
+    </p>
+    <p class="mb-4 text-lg">
+      Votre soutien fait toute la différence et me permet de continuer à créer
+      du contenu et à travailler sur mes projets personnels. Que ce soit à
+      travers vos abonnements ou vos encouragements, vous êtes une véritable
+      source de motivation.
+    </p>
+    <p class="mb-4 text-lg">
+      Merci de croire en ce que je fais et de rendre cette aventure possible.
+    </p>
+    <p class="text-xl mb-4 flex justify-center text-primary">
+      <IconHearts class="h-12 w-12" stroke-width="1.5" />
+    </p>
+    <h2 class="text-lg font-bold mb-4">
+      T-potes abonné·e·s via
       <a
-        href="https://twitch.tv/thoanny"
+        href="https://www.twitch.tv/thoanny"
         target="_blank"
-        class="text-primary font-semibold underline underline-offset-2"
+        rel="nofollow"
+        class="underline underline-offset-2"
         >Twitch</a
       >
-      ou
+    </h2>
+    <div class="flex flex-wrap gap-2 justify-center mb-6 mt-2">
+      <span
+        v-for="tpote in twitchTpotes"
+        :key="tpote.id"
+        class="badge badge-primary badge-lg"
+        :class="{ 'badge-outline': !tpote.active }"
+      >
+        {{ tpote.name }}
+      </span>
+    </div>
+    <h2 class="text-lg font-bold mb-4">
+      T-potes abonné·e·s via
       <a
         href="https://www.patreon.com/thoanny"
         target="_blank"
-        class="font-semibold text-primary underline underline-offset-2"
+        rel="nofollow"
+        class="underline underline-offset-2"
         >Patreon</a
-      >.
-    </p>
-    <div
-      class="flex gap-x-2 gap-y-3 flex-wrap justify-center"
-      v-if="data.tpotes"
-    >
-      <div
-        v-for="tpote in data.tpotes"
-        class="flex rounded-full overflow-hidden bg-white p-1 gap-2 pr-4 font-semibold items-center shadow"
       >
-        <img
-          :src="tpote.featuredImage.node.sourceUrl"
-          class="h-8 w-8 rounded-full"
-          alt=""
-        />
-        {{ tpote.title }}
-      </div>
+    </h2>
+    <div class="flex flex-wrap gap-2 justify-center mt-2 mb-6">
+      <span
+        v-for="tpote in patreonTpotes"
+        :key="tpote.id"
+        class="badge badge-primary badge-lg"
+        :class="{ 'badge-outline': !tpote.active }"
+      >
+        {{ tpote.name }}
+      </span>
     </div>
   </div>
 </template>
