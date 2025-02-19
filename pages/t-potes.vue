@@ -63,7 +63,7 @@ useSeoMeta({
         v-for="tpote in twitchTpotes"
         :key="tpote.id"
         class="badge badge-primary badge-lg"
-        :class="{ 'badge-outline': !tpote.active }"
+        :class="{ 'badge-outline bg-white': !tpote.active }"
       >
         {{ tpote.name }}
       </span>
@@ -83,7 +83,7 @@ useSeoMeta({
         v-for="tpote in patreonTpotes"
         :key="tpote.id"
         class="badge badge-primary badge-lg"
-        :class="{ 'badge-outline': !tpote.active }"
+        :class="{ 'badge-outline bg-white': !tpote.active }"
       >
         {{ tpote.name }}
       </span>

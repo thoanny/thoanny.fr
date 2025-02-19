@@ -1,6 +1,8 @@
 <script setup>
 import {
   IconNotebook,
+  IconNews,
+  IconBrandTwitch,
   IconTools,
   IconDeviceGamepad2,
   IconBroadcast,
@@ -22,32 +24,18 @@ const links = [
     icon: IconNotebook,
   },
   {
-    id: "projets",
-    to: { name: "categories-slug", params: { slug: "projets" } },
-    title: "Projets",
+    id: "rdp",
+    to: { name: "revue-de-presse" },
+    title: "Revue de presse",
     hideTitle: false,
-    icon: IconTools,
-  },
-  {
-    id: "jeux-video",
-    to: { name: "categories-slug", params: { slug: "jeux-video" } },
-    title: "Jeux vidéo",
-    hideTitle: false,
-    icon: IconDeviceGamepad2,
-  },
-  {
-    id: "streaming",
-    to: { name: "categories-slug", params: { slug: "streaming" } },
-    title: "Streaming",
-    hideTitle: false,
-    icon: IconBroadcast,
+    icon: IconNews,
   },
   {
     id: "twitch",
     to: { name: "twitch" },
     title: "Twitch",
     hideTitle: false,
-    icon: IconDeviceTv,
+    icon: IconBrandTwitch,
   },
   {
     id: "t-potes",
