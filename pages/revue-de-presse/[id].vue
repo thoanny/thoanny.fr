@@ -4,6 +4,14 @@ const { data } = await useFetch(
   `https://api.thoanny.fr/press-reviews/issues/${route.params.id}`
 );
 
+if (data.value.issue.id !== 2) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Revue de presse introuvable",
+    fatal: true,
+  });
+}
+
 const issuePublishedAt = new Date(
   data.value.issue.published_at
 ).toLocaleDateString("fr-FR", {
@@ -33,10 +41,6 @@ const formatDateTime = (datetime) => {
     minute: "numeric",
   });
 };
-
-const replaceByDefaultImg = (e) => {
-  e.target.src = "/background-green.jpg";
-};
 </script>
 
 <template>
@@ -52,7 +56,7 @@ const replaceByDefaultImg = (e) => {
             :src="post.thumbnail ?? '/background-green.jpg'"
             class="w-full h-full object-cover"
             alt=""
-            @error="replaceByDefaultImg"
+            onerror="this.src='/background-green.jpg'"
           />
         </figure>
         <div class="card-body !pb-6">
