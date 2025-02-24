@@ -1,4 +1,6 @@
 <script setup>
+const route = useRoute();
+
 const { data } = await useFetch(
   "https://api.thoanny.fr/press-reviews/categories/1"
 );
@@ -11,6 +13,28 @@ useSeoMeta({
   ogDescription:
     "Chaque semaine, retrouvez une sélection d'articles dans ma revue de presse jeux vidéo.",
 });
+
+const handleChangeIssue = (e) => {
+  console.log("handleChangeIssue", e.target.value);
+  if (!e.target.value) {
+    return navigateTo({
+      name: "revue-de-presse",
+    });
+  }
+  return navigateTo({
+    name: "revue-de-presse-id",
+    params: { id: e.target.value },
+  });
+};
+
+const currentId = ref("");
+const currentTag = ref("");
+
+if (route.params.id) {
+  currentId.value = route.params.id;
+}
+
+const tags = useState("rdpTags", () => []);
 </script>
 
 <template>
@@ -19,24 +43,32 @@ useSeoMeta({
       Revue de presse
       <span class="whitespace-nowrap">// {{ data.category.name }}</span>
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-      <div class="flex flex-col gap-2 md:col-span-2">
-        <div class="sticky top-4 flex gap-2 flex-col">
-          <NuxtLink
-            v-for="issue in data.issues"
-            :key="issue.id"
-            class="btn btn-primary rounded-full btn-sm"
-            :to="{
-              name: 'revue-de-presse-id',
-              params: { id: issue.id },
-            }"
-          >
-            {{ issue.name }}
-          </NuxtLink>
-        </div>
-      </div>
-      <NuxtPage />
+
+    <!-- <pre>{{ tags }}</pre> -->
+
+    <!-- <div class="bg-white rounded-box p-4 shadow-lg flex gap-2"> -->
+    <div class="">
+      <select
+        class="select select-bordered"
+        @change="handleChangeIssue"
+        v-model="currentId"
+      >
+        <option value="">-- Édition --</option>
+        <option v-for="issue in data.issues" :value="issue.id">
+          {{ issue.name }}
+        </option>
+      </select>
+      <!-- <select class="select select-bordered" v-model="currentTag">
+        <option value="" disabled selected>-- Mot-clé --</option>
+        <option v-for="tag in tags" :value="tag.id">
+          {{ tag.name }}
+        </option>
+      </select> -->
     </div>
+
+    <!-- <pre>{{ data }}</pre> -->
+
+    <NuxtPage />
   </div>
 </template>
 
