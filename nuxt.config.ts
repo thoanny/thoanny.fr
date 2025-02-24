@@ -40,7 +40,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxtjs/algolia", "@nuxtjs/mdc"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/seo",
+    "@nuxtjs/algolia",
+    "@nuxtjs/mdc",
+  ],
 
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
