@@ -114,7 +114,7 @@ function compareNames(a, b) {
       <div v-if="post.description" class="self-end pb-6">
         <div class="chat chat-start">
           <div class="chat-bubble max-w-full mr-4 md:mr-0">
-            {{ post.description }}
+            <MDC :value="post.description" />
           </div>
         </div>
       </div>
@@ -128,5 +128,13 @@ function compareNames(a, b) {
 a:visited h2,
 a:visited:hover h2 {
   color: #4a00ff;
+}
+
+.chat-bubble :deep(a) {
+  @apply underline underline-offset-2;
+}
+
+.chat-bubble :deep(ul) {
+  @apply list-disc ml-4;
 }
 </style>

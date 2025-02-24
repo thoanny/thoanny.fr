@@ -28,18 +28,15 @@ const handleChangeIssue = (e) => {
 };
 
 const currentId = ref("");
-const currentTag = ref("");
 
 if (route.params.id) {
   currentId.value = route.params.id;
 }
-
-const tags = useState("rdpTags", () => []);
 </script>
 
 <template>
   <div class="container mx-auto !max-w-4xl">
-    <h1 class="mb-6 text-2xl font-bold text-primary text-center md:text-start">
+    <h1 class="mb-6 text-2xl font-bold text-primary text-center sm:text-start">
       Revue de presse
       <span class="whitespace-nowrap">// {{ data.category.name }}</span>
     </h1>
@@ -49,7 +46,7 @@ const tags = useState("rdpTags", () => []);
     <!-- <div class="bg-white rounded-box p-4 shadow-lg flex gap-2"> -->
     <div class="">
       <select
-        class="select select-bordered"
+        class="select select-bordered w-full sm:w-auto"
         @change="handleChangeIssue"
         v-model="currentId"
       >

@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   site: {
     url: "https://thoanny.fr",
     name: "Thoanny",
@@ -8,15 +9,19 @@ export default defineNuxtConfig({
       "Blog de Thoanny, où sont partagés des actualités de ses projets personnels, des articles sur le thème du streaming, du jeu vidéo, et aussi des trucs et astuces...",
     defaultLocale: "fr",
   },
+
   sitemap: {
     sources: ["/api/__sitemap__/urls"],
   },
+
   ogImage: {
     enabled: false,
   },
+
   linkChecker: {
     enabled: false,
   },
+
   app: {
     head: {
       meta: [
@@ -34,7 +39,9 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxtjs/algolia"],
+
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo", "@nuxtjs/algolia", "@nuxtjs/mdc"],
+
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
     applicationId: process.env.ALGOLIA_APPLICATION_ID,
@@ -42,4 +49,6 @@ export default defineNuxtConfig({
       theme: "reset",
     },
   },
+
+  compatibilityDate: "2025-02-24",
 });
