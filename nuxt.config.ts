@@ -10,6 +10,12 @@ export default defineNuxtConfig({
     defaultLocale: "fr",
   },
 
+  routeRules: {
+    "/revue-de-presse": { redirect: { to: "/", statusCode: 308 } },
+    "/revue-de-presse/2": { redirect: { to: "/", statusCode: 308 } },
+    "/revue-de-presse/3": { redirect: { to: "/", statusCode: 308 } },
+  },
+
   sitemap: {
     sources: ["/api/__sitemap__/urls"],
   },

@@ -24,13 +24,6 @@ const links = [
     icon: IconNotebook,
   },
   {
-    id: "rdp",
-    to: { name: "revue-de-presse" },
-    title: "Revue de presse",
-    hideTitle: false,
-    icon: IconNews,
-  },
-  {
     id: "twitch",
     to: { name: "twitch" },
     title: "Twitch",
