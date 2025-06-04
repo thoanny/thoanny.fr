@@ -1,0 +1,38 @@
+[
+    {
+        "icon": "guild-wars-2.png",
+        "id": 1,
+        "name": "Guild Wars 2",
+        "slug": "guild-wars-2"
+    },
+    {
+        "icon": "palia.png",
+        "id": 2,
+        "name": "Palia",
+        "slug": "palia"
+    },
+    {
+        "icon": "enshrouded.png",
+        "id": 3,
+        "name": "Enshrouded",
+        "slug": "enshrouded"
+    },
+    {
+        "icon": "once-human.png",
+        "id": 4,
+        "name": "Once Human",
+        "slug": "once-human"
+    },
+    {
+        "icon": "dune-awakening.png",
+        "id": 5,
+        "name": "Dune: Awakening",
+        "slug": "dune-awakening"
+    },
+    {
+        "icon": "genshin-impact.png",
+        "id": 6,
+        "name": "Genshin Impact",
+        "slug": "genshin-impact"
+    }
+]

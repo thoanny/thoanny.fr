@@ -1,16 +1,12 @@
 <script setup>
 import {
   IconNotebook,
-  IconNews,
   IconBrandTwitch,
-  IconTools,
-  IconDeviceGamepad2,
-  IconBroadcast,
-  IconDeviceTv,
   IconFlame,
   IconSearch,
   IconBrandPatreon,
   IconBrandPatreonFilled,
+  IconBookmark,
 } from "@tabler/icons-vue";
 
 const modal = ref();
@@ -22,6 +18,13 @@ const links = [
     title: "Blog",
     hideTitle: false,
     icon: IconNotebook,
+  },
+  {
+    id: "bookmarks",
+    to: { name: "bookmarks" },
+    title: "Favoris",
+    hideTitle: false,
+    icon: IconBookmark,
   },
   {
     id: "twitch",

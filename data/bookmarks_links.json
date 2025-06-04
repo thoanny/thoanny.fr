@@ -1,0 +1,292 @@
+[
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 1,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://guildwars2.com"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 2,
+        "name": "Wiki (fr)",
+        "type": "official",
+        "url": "https://wiki-fr.guildwars2.com/wiki/Accueil"
+    },
+    {
+        "category": 1,
+        "class": "row-span-3",
+        "description": null,
+        "icon": "updates",
+        "id": 3,
+        "name": "Notes de mise à jour",
+        "type": "official",
+        "url": "https://fr-forum.guildwars2.com/forum/24-notes-de-mise-%C3%A0-jour-du-jeu/"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "calendar",
+        "id": 4,
+        "name": "Calendrier",
+        "type": "official",
+        "url": "https://fr-forum.guildwars2.com/events/"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "youtube",
+        "id": 5,
+        "name": "YouTube",
+        "type": "official",
+        "url": "https://www.youtube.com/guildwars2"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "twitch",
+        "id": 6,
+        "name": "Twitch",
+        "type": "official",
+        "url": "https://www.twitch.tv/guildwars2"
+    },
+    {
+        "category": 1,
+        "class": "row-span-2",
+        "description": null,
+        "icon": null,
+        "id": 7,
+        "name": "Le Bus Magique",
+        "type": "fansite",
+        "url": "https://lebusmagique.fr"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 8,
+        "name": "GW2.fr",
+        "type": "fansite",
+        "url": "https://www.gw2.fr"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "map",
+        "id": 9,
+        "name": "Carte interactive",
+        "type": "fansite",
+        "url": "https://www.lebusmagique.fr/pages/outils-gw2/carte-exploration.html"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 10,
+        "name": "Chambre forte du sorcier",
+        "type": "thoanny",
+        "url": "https://www.lebusmagique.fr/pages/outils-gw2/succes-quotidiens.html"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "fish",
+        "id": 11,
+        "name": "Compagnon de pêche",
+        "type": "thoanny",
+        "url": "https://www.lebusmagique.fr/pages/extension/gw2-eod/peche/liste-des-poissons.html"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "clock",
+        "id": 12,
+        "name": "Timer world boss",
+        "type": "fansite",
+        "url": "https://www.lebusmagique.fr/pages/outils-gw2/les-world-boss.html"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "clock",
+        "id": 13,
+        "name": "Timer métas et world boss",
+        "type": "fansite",
+        "url": "https://www.lebusmagique.fr/pages/outils-gw2/timer-wb-et-hot.html"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 14,
+        "name": "[fast] Farming community",
+        "type": "fansite",
+        "url": "https://fast.farming-community.eu"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 15,
+        "name": "Peu Research Center",
+        "type": "fansite",
+        "url": "https://peuresearchcenter.com"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "tools",
+        "id": 16,
+        "name": "GW2Efficiency",
+        "type": "fansite",
+        "url": "https://gw2efficiency.com"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "document",
+        "id": 17,
+        "name": "Aide et ressources, par Vilzur",
+        "type": "fansite",
+        "url": "https://docs.google.com/document/d/1t2wNP1-BxqrPknmD_WBHwtjO2KzAEFE9lXVFMujGebU/edit?usp=sharing"
+    },
+    {
+        "category": 1,
+        "class": "col-span-2",
+        "description": "Optimisation de déblocage d'apparences.",
+        "icon": "skins",
+        "id": 18,
+        "name": "Wardrobe Unlock Analyser",
+        "type": "fansite",
+        "url": "https://immortius.xyz/wardrobe-unlock-analyser/"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": "Jeu de culture générale sur l'univers de Guild Wars.",
+        "icon": null,
+        "id": 19,
+        "name": "GW2Trivia",
+        "type": "fansite",
+        "url": "https://gw2trivia.com"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "app",
+        "id": 20,
+        "name": "Blish HUD",
+        "type": "fansite",
+        "url": "https://blishhud.com"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "app",
+        "id": 21,
+        "name": "Raidcore Nexus",
+        "type": "fansite",
+        "url": "https://raidcore.gg/Nexus"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "swords",
+        "id": 22,
+        "name": "Builds Hardstuck",
+        "type": "fansite",
+        "url": "https://hardstuck.gg/gw2/builds/"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "swords",
+        "id": 23,
+        "name": "Builds Discretize",
+        "type": "fansite",
+        "url": "https://www.discretize.eu/builds/"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": "swords",
+        "id": 24,
+        "name": "Builds MetaBattle",
+        "type": "fansite",
+        "url": "https://metabattle.com/wiki/MetaBattle_Wiki"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 25,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://palia.com/fr-FR"
+    },
+    {
+        "category": 3,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 26,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://enshrouded.com"
+    },
+    {
+        "category": 4,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 27,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://www.oncehuman.game/index.html"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 28,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://duneawakening.com/fr"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 29,
+        "name": "Site officiel",
+        "type": "official",
+        "url": "https://genshin.hoyoverse.com/fr/home"
+    }
+]
