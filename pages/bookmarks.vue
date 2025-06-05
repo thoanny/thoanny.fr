@@ -5,7 +5,7 @@
       Mes favoris
     </h1>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 bookmarks-menu"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4 bookmarks-menu"
     >
       <div v-for="category in categories" :key="category.id">
         <NuxtLink
@@ -36,7 +36,7 @@ const categories = computed(() => {
 <style lang="scss" scoped>
 .bookmarks-menu {
   a {
-    @apply aspect-square bg-neutral text-neutral-content w-full h-full flex items-center justify-center text-center rounded-box font-bold text-lg p-4 leading-5 flex-col gap-2 transition-all;
+    @apply aspect-square bg-neutral text-neutral-content w-full h-full flex items-center justify-center text-center rounded-box font-bold text-lg p-2 leading-5 flex-col gap-2 transition-all;
 
     &:hover,
     &:focus,

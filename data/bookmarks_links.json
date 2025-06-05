@@ -6,6 +6,7 @@
         "icon": null,
         "id": 1,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://guildwars2.com"
     },
@@ -16,6 +17,7 @@
         "icon": null,
         "id": 2,
         "name": "Wiki (fr)",
+        "sort_order": null,
         "type": "official",
         "url": "https://wiki-fr.guildwars2.com/wiki/Accueil"
     },
@@ -26,6 +28,7 @@
         "icon": "updates",
         "id": 3,
         "name": "Notes de mise à jour",
+        "sort_order": null,
         "type": "official",
         "url": "https://fr-forum.guildwars2.com/forum/24-notes-de-mise-%C3%A0-jour-du-jeu/"
     },
@@ -36,6 +39,7 @@
         "icon": "calendar",
         "id": 4,
         "name": "Calendrier",
+        "sort_order": null,
         "type": "official",
         "url": "https://fr-forum.guildwars2.com/events/"
     },
@@ -46,6 +50,7 @@
         "icon": "youtube",
         "id": 5,
         "name": "YouTube",
+        "sort_order": null,
         "type": "official",
         "url": "https://www.youtube.com/guildwars2"
     },
@@ -56,6 +61,7 @@
         "icon": "twitch",
         "id": 6,
         "name": "Twitch",
+        "sort_order": null,
         "type": "official",
         "url": "https://www.twitch.tv/guildwars2"
     },
@@ -66,6 +72,7 @@
         "icon": null,
         "id": 7,
         "name": "Le Bus Magique",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://lebusmagique.fr"
     },
@@ -76,6 +83,7 @@
         "icon": null,
         "id": 8,
         "name": "GW2.fr",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://www.gw2.fr"
     },
@@ -86,6 +94,7 @@
         "icon": "map",
         "id": 9,
         "name": "Carte interactive",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://www.lebusmagique.fr/pages/outils-gw2/carte-exploration.html"
     },
@@ -96,6 +105,7 @@
         "icon": null,
         "id": 10,
         "name": "Chambre forte du sorcier",
+        "sort_order": null,
         "type": "thoanny",
         "url": "https://www.lebusmagique.fr/pages/outils-gw2/succes-quotidiens.html"
     },
@@ -106,6 +116,7 @@
         "icon": "fish",
         "id": 11,
         "name": "Compagnon de pêche",
+        "sort_order": null,
         "type": "thoanny",
         "url": "https://www.lebusmagique.fr/pages/extension/gw2-eod/peche/liste-des-poissons.html"
     },
@@ -116,6 +127,7 @@
         "icon": "clock",
         "id": 12,
         "name": "Timer world boss",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://www.lebusmagique.fr/pages/outils-gw2/les-world-boss.html"
     },
@@ -126,6 +138,7 @@
         "icon": "clock",
         "id": 13,
         "name": "Timer métas et world boss",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://www.lebusmagique.fr/pages/outils-gw2/timer-wb-et-hot.html"
     },
@@ -136,6 +149,7 @@
         "icon": null,
         "id": 14,
         "name": "[fast] Farming community",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://fast.farming-community.eu"
     },
@@ -146,6 +160,7 @@
         "icon": null,
         "id": 15,
         "name": "Peu Research Center",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://peuresearchcenter.com"
     },
@@ -156,6 +171,7 @@
         "icon": "tools",
         "id": 16,
         "name": "GW2Efficiency",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://gw2efficiency.com"
     },
@@ -166,6 +182,7 @@
         "icon": "document",
         "id": 17,
         "name": "Aide et ressources, par Vilzur",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://docs.google.com/document/d/1t2wNP1-BxqrPknmD_WBHwtjO2KzAEFE9lXVFMujGebU/edit?usp=sharing"
     },
@@ -176,6 +193,7 @@
         "icon": "skins",
         "id": 18,
         "name": "Wardrobe Unlock Analyser",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://immortius.xyz/wardrobe-unlock-analyser/"
     },
@@ -186,6 +204,7 @@
         "icon": null,
         "id": 19,
         "name": "GW2Trivia",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://gw2trivia.com"
     },
@@ -196,6 +215,7 @@
         "icon": "app",
         "id": 20,
         "name": "Blish HUD",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://blishhud.com"
     },
@@ -206,6 +226,7 @@
         "icon": "app",
         "id": 21,
         "name": "Raidcore Nexus",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://raidcore.gg/Nexus"
     },
@@ -216,6 +237,7 @@
         "icon": "swords",
         "id": 22,
         "name": "Builds Hardstuck",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://hardstuck.gg/gw2/builds/"
     },
@@ -226,6 +248,7 @@
         "icon": "swords",
         "id": 23,
         "name": "Builds Discretize",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://www.discretize.eu/builds/"
     },
@@ -236,6 +259,7 @@
         "icon": "swords",
         "id": 24,
         "name": "Builds MetaBattle",
+        "sort_order": null,
         "type": "fansite",
         "url": "https://metabattle.com/wiki/MetaBattle_Wiki"
     },
@@ -246,6 +270,7 @@
         "icon": null,
         "id": 25,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://palia.com/fr-FR"
     },
@@ -256,6 +281,7 @@
         "icon": null,
         "id": 26,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://enshrouded.com"
     },
@@ -266,6 +292,7 @@
         "icon": null,
         "id": 27,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://www.oncehuman.game/index.html"
     },
@@ -276,6 +303,7 @@
         "icon": null,
         "id": 28,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://duneawakening.com/fr"
     },
@@ -286,7 +314,338 @@
         "icon": null,
         "id": 29,
         "name": "Site officiel",
+        "sort_order": null,
         "type": "official",
         "url": "https://genshin.hoyoverse.com/fr/home"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 30,
+        "name": "LBM Gaming",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://gaming.lebusmagique.fr"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": "Base de données, personnages et builds.",
+        "icon": "db",
+        "id": 31,
+        "name": "Genshin.gg",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://genshin.gg"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "map",
+        "id": 32,
+        "name": "Carte interactive",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://act.hoyolab.com/ys/app/interactive-map/index.html"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "calculator",
+        "id": 33,
+        "name": "Calculateur d'amélioration",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://act.hoyolab.com/ys/event/calculator-sea/index.html"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "wiki",
+        "id": 34,
+        "name": "Wiki",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://wiki.hoyolab.com/pc/genshin/home"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "calculator",
+        "id": 35,
+        "name": "Simulateur d'équipe",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://act.hoyolab.com/ys/event/bbs-lineup-ys-sea/index.html"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "map",
+        "id": 36,
+        "name": "Carte interactive",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://genshin-impact-map.appsample.com/"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "calculator",
+        "id": 37,
+        "name": "Planificateur d'amélioration",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://genshin-center.com/planner"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "achievements",
+        "id": 38,
+        "name": "Suivi des succès",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://genshin-center.com/achievements"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "swords",
+        "id": 39,
+        "name": "Genshin Builds",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://genshin-builds.com/fr"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "youtube",
+        "id": 40,
+        "name": "YouTube",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://www.youtube.com/@GenshinImpact/"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "discord",
+        "id": 41,
+        "name": "Discord",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://discord.com/invite/genshinimpact"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "twitch",
+        "id": 42,
+        "name": "Twitch",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://www.twitch.tv/genshinimpactofficial"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "map",
+        "id": 43,
+        "name": "Carte interactive",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://awakeningmap.io"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "db",
+        "id": 44,
+        "name": "Base de données",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://dune.gaming.tools"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": "calculator",
+        "id": 45,
+        "name": "Planificateur de jardin",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://palia-garden-planner.vercel.app/?layout=v0.2_DIM-111-111-111_CROPS-AAAAAAAAA-BkPTCTBkTPC-AAAAAAAAA-BkPTCTBkTPC-AAAAAAAAA-BkPTCTBkTPC-AAAAAAAAA-BkPTCTBkTPC-AAAAAAAAA"
+    },
+    {
+        "category": 2,
+        "class": "col-span-2",
+        "description": "Meilleur site ! Bundles, poissons, insectes, souhaits, recettes, meubles, etc.",
+        "icon": "tools",
+        "id": 46,
+        "name": "Palia Tracker",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://www.paliatracker.com/fr"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": "Kilima, Bahari et Sylvestre.",
+        "icon": "map",
+        "id": 47,
+        "name": "Tas de fouilles",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://palia.th.gl/rummage-pile"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": "discord",
+        "id": 48,
+        "name": "Discord",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://discord.com/invite/playpalia"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": "youtube",
+        "id": 49,
+        "name": "YouTube",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://www.youtube.com/@playPalia"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": "wiki",
+        "id": 50,
+        "name": "Wiki",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://palia.wiki.gg/wiki/Palia_Wiki/fr"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": null,
+        "icon": "db",
+        "id": 51,
+        "name": "Paliapedia",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://paliapedia.com/"
+    },
+    {
+        "category": 2,
+        "class": null,
+        "description": "Personnages, objets et recettes.",
+        "icon": "db",
+        "id": 52,
+        "name": "Palia",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://palia.thoanny.fr"
+    },
+    {
+        "category": 1,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 53,
+        "name": "[GWII] Bienvenue en Tyrie",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://tyrie.an-d.me"
+    },
+    {
+        "category": 3,
+        "class": "",
+        "description": "Objets, recettes, carte interactive.",
+        "icon": "db",
+        "id": 54,
+        "name": "Enshrouded",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://enshrouded.vercel.app"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "db",
+        "id": 55,
+        "name": "Carte interactive",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://gaming.lebusmagique.fr/genshin-carte-interactive/?g=1,3,26"
+    },
+    {
+        "category": 6,
+        "class": null,
+        "description": null,
+        "icon": "db",
+        "id": 56,
+        "name": "Recettes",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://gaming.lebusmagique.fr/genshin-impact/recettes/"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "discord",
+        "id": 57,
+        "name": "Discord",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://discord.gg/duneawakening"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "youtube",
+        "id": 58,
+        "name": "YouTube",
+        "sort_order": null,
+        "type": "official",
+        "url": "https://www.youtube.com/@Funcom"
+    },
+    {
+        "category": 4,
+        "class": null,
+        "description": "Spéciations, objets, recettes, communautés, ...",
+        "icon": "db",
+        "id": 59,
+        "name": "Once Human",
+        "sort_order": null,
+        "type": "thoanny",
+        "url": "https://once-human.thoanny.fr"
     }
 ]

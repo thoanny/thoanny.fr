@@ -80,6 +80,26 @@
             stroke="1.5"
           />
           <IconMap v-else-if="link.icon == 'map'" class="size-6" stroke="1.5" />
+          <IconDatabase
+            v-else-if="link.icon == 'db'"
+            class="size-6"
+            stroke="1.5"
+          />
+          <IconBrandDiscord
+            v-else-if="link.icon == 'discord'"
+            class="size-6"
+            stroke="1.5"
+          />
+          <IconCalculator
+            v-else-if="link.icon == 'calculator'"
+            class="size-6"
+            stroke="1.5"
+          />
+          <IconTrophy
+            v-else-if="link.icon == 'trophy'"
+            class="size-6"
+            stroke="1.5"
+          />
           <IconLink v-else class="size-6" stroke="1.5" />
         </template>
         <template v-else>
@@ -111,6 +131,10 @@ import {
   IconCalendarWeek,
   IconFish,
   IconMap,
+  IconDatabase,
+  IconBrandDiscord,
+  IconCalculator,
+  IconTrophy,
 } from "@tabler/icons-vue";
 import categories from "@/data/bookmarks_categories.json";
 import allLinks from "@/data/bookmarks_links.json";
@@ -125,7 +149,9 @@ if (!category) {
 }
 
 const links = computed(() => {
-  return allLinks.filter((link) => link.category === category.id);
+  return allLinks
+    .filter((link) => link.category === category.id)
+    .sort((a, b) => a.sort_order - b.sort_order);
 });
 
 const textColor = (type) => {

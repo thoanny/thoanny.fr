@@ -34,5 +34,17 @@
         "id": 6,
         "name": "Genshin Impact",
         "slug": "genshin-impact"
+    },
+    {
+        "icon": null,
+        "id": 7,
+        "name": "World of Warcraft",
+        "slug": "world-of-warcraft"
+    },
+    {
+        "icon": null,
+        "id": 8,
+        "name": "No Man's Sky",
+        "slug": "no-mans-sky"
     }
 ]
