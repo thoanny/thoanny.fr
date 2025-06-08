@@ -647,5 +647,49 @@
         "sort_order": null,
         "type": "thoanny",
         "url": "https://once-human.thoanny.fr"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "wiki",
+        "id": 60,
+        "name": "Wiki",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://awakening.wiki/"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": null,
+        "id": 61,
+        "name": "Statuts des serveurs",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://awoo.tools"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "map",
+        "id": 62,
+        "name": "Désert profond",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://dfintz.github.io/DD-Mapping-Tool/"
+    },
+    {
+        "category": 5,
+        "class": null,
+        "description": null,
+        "icon": "swords",
+        "id": 63,
+        "name": "Skills builder",
+        "sort_order": null,
+        "type": "fansite",
+        "url": "https://www.openworld.gg/en/dune-awakening/skill-builder"
     }
 ]
