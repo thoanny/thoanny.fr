@@ -34,13 +34,6 @@ const links = [
     icon: IconBrandTwitch,
   },
   {
-    id: "t-potes",
-    to: { name: "t-potes" },
-    title: "T-potes",
-    hideTitle: false,
-    icon: IconFlame,
-  },
-  {
     id: "chercher",
     to: { name: "chercher" },
     title: "Chercher",
