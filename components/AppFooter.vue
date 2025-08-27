@@ -1,6 +1,5 @@
 <script setup>
 import {
-  IconBrandTwitch,
   IconBrandDiscord,
   IconBrandX,
   IconBrandInstagram,
@@ -13,24 +12,9 @@ const currentYear = new Date().toLocaleDateString("FR-fr", { year: "numeric" });
 
 const socialLinks = [
   {
-    id: "twitch",
-    url: "https://twitch.tv/thoanny",
-    icon: IconBrandTwitch,
-  },
-  {
     id: "discord",
     url: "https://discord.gg/He3jpV9uvg",
     icon: IconBrandDiscord,
-  },
-  {
-    id: "x-twitter",
-    url: "https://twitter.com/thoanny_",
-    icon: IconBrandX,
-  },
-  {
-    id: "instagram",
-    url: "https://instagram.com/thoanny__",
-    icon: IconBrandInstagram,
   },
   {
     id: "github",

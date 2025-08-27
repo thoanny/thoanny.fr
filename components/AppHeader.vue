@@ -1,8 +1,6 @@
 <script setup>
 import {
   IconNotebook,
-  IconBrandTwitch,
-  IconFlame,
   IconSearch,
   IconBrandPatreon,
   IconBrandPatreonFilled,
@@ -25,13 +23,6 @@ const links = [
     title: "Favoris",
     hideTitle: false,
     icon: IconBookmark,
-  },
-  {
-    id: "twitch",
-    to: { name: "twitch" },
-    title: "Twitch",
-    hideTitle: false,
-    icon: IconBrandTwitch,
   },
   {
     id: "chercher",

@@ -32,8 +32,7 @@ body {
 }
 
 body {
-  &.post,
-  &.twitch {
+  &.post {
     main {
       > header {
         @screen xl {
