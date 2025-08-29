@@ -1,65 +1,56 @@
 <script setup>
-import { getCategory } from "~/utils/graphql.js";
-
 const route = useRoute();
 
-const data = ref({
-  loading: true,
-  category: null,
-  posts: null,
-  hasNextPage: false,
-  endCursor: null,
-});
+const API = `https://api.thoanny.fr/blog/categories/${route.params.slug}`;
 
-await getCategory({ id: route.params.slug }).then((d) => {
-  if (!d.category) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: "Catégorie introuvable",
-      fatal: true,
-    });
-  }
+const { data, status } = await useFetch(API);
 
-  data.value = {
-    loading: false,
-    category: d.category.name,
-    posts: d.category.posts.nodes,
-    hasNextPage: d.category.posts.pageInfo.hasNextPage,
-    endCursor: d.category.posts.pageInfo.endCursor,
-  };
-});
+const posts = ref([]);
+const next = ref(false);
+const isLoading = ref(false);
 
 const loadMore = async () => {
-  data.value.loading = true;
+  isLoading.value = true;
 
-  await getCategory({
-    id: route.params.slug,
-    after: data.value.endCursor,
-  }).then((d) => {
-    data.value = {
-      loading: false,
-      category: data.value.category,
-      posts: data.value.posts.concat(d.category.posts.nodes),
-      hasNextPage: d.category.posts.pageInfo.hasNextPage,
-      endCursor: d.category.posts.pageInfo.endCursor,
-    };
+  await $fetch(API, {
+    query: { page: next.value },
+  }).then((data) => {
+    posts.value = posts.value.concat(data.posts);
+    next.value = data.next;
+    isLoading.value = false;
   });
 };
+
+console.log(data);
+
+// if (!d.category) {
+//   throw createError({
+//     statusCode: 404,
+//     statusMessage: "Catégorie introuvable",
+//     fatal: true,
+//   });
+// }
+
+onMounted(() => {
+  posts.value = data.value?.posts;
+  next.value = data.value?.next;
+});
 </script>
 
 <template>
-  <SearchEngineOptimization :title="`Catégorie : ${data.category}`" />
+  <SearchEngineOptimization :title="`Catégorie : ${data.category?.name}`" />
 
-  <div v-if="data.posts.length > 0">
-    <h1
-      class="text-4xl mb-6 font-bold dark:text-gray-200 flex items-center gap-2"
-    >
-      Catégorie&nbsp;: {{ data.category }}
+  <div v-if="status === 'pending'"><AppLoading /></div>
+  <div v-else-if="status === 'success'">
+    <h1 class="text-4xl mb-6 font-bold flex items-center gap-2">
+      Catégorie&nbsp;: {{ data.category.name }}
     </h1>
-    <PostCard v-for="post in data.posts" :post="post" :key="post.id" />
+    <div v-if="posts.length > 0">
+      <PostCard v-for="post in posts" :post="post" :key="post.id" />
+    </div>
     <PostLoadMore
-      :hasNextPage="data.hasNextPage"
-      :loading="data.loading"
+      :hasNextPage="next"
+      :loading="isLoading"
       @load-more="loadMore"
     />
   </div>

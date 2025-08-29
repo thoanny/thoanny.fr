@@ -1,52 +1,24 @@
 // server/api/__sitemap__/urls.ts
 export default defineSitemapEventHandler(async () => {
-  const data = await $fetch("https://wp.thoanny.fr/graphql", {
-    method: "POST",
-    body: JSON.stringify({
-      query: `
-        query GET_SLUGS {
-          posts(first: 999) {
-            nodes {
-              slug
-              modified
-            }
-          }
-          categories(first: 999) {
-            nodes {
-              slug
-            }
-          }
-          tags(first: 999) {
-            nodes {
-              slug
-            }
-          }
-          pages(first: 999) {
-            nodes {
-              slug
-              modified
-            }
-          }
-        }
-    `,
-    }),
-  }).then((res) => res.data);
+  const data = await $fetch("https://api.thoanny.fr/blog/sitemap");
 
-  const posts = await data.posts.nodes.map((p) => {
-    return { loc: `/${p.slug}`, lastmod: p.modified, _sitemap: "posts" };
+  console.log("data:", data);
+
+  const posts = await data.posts.map((p) => {
+    return {
+      loc: `/${p.slug}`,
+      lastmod: p.updatedAt || p.publishedAt,
+      _sitemap: "posts",
+    };
   });
 
-  const pages = await data.pages.nodes.map((p) => {
-    return { loc: `/${p.slug}`, lastmod: p.modified, _sitemap: "pages" };
-  });
-
-  const categories = await data.categories.nodes.map((c) => {
+  const categories = await data.categories.map((c) => {
     return { loc: `/categories/${c.slug}`, _sitemap: "categories" };
   });
 
-  const tags = await data.tags.nodes.map((t) => {
+  const tags = await data.tags.map((t) => {
     return { loc: `/mots-cles/${t.slug}`, _sitemap: "tags" };
   });
 
-  return [...posts, ...pages, ...categories, ...tags];
+  return [...posts, ...categories, ...tags];
 });

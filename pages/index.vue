@@ -1,49 +1,49 @@
 <script setup>
-import { getPosts } from "~/utils/graphql.js";
+const API = "https://api.thoanny.fr/blog/posts";
+const { data, status } = await useFetch(API);
 
-const data = ref({
-  loading: true,
-  hero: {},
-  posts: [],
-  hasNextPage: false,
-  endCursor: null,
+const posts = ref([]);
+const next = ref(false);
+const isLoading = ref(false);
+
+const hero = computed(() => {
+  return posts.value[0];
 });
 
-await getPosts().then((d) => {
-  data.value = {
-    loading: false,
-    hero: d.posts.nodes.length > 1 ? d.posts.nodes.slice(0, 1)[0] : {},
-    posts: d.posts.nodes.length > 1 ? d.posts.nodes.slice(1) : d.posts.nodes,
-    hasNextPage: d.posts.pageInfo.hasNextPage,
-    endCursor: d.posts.pageInfo.endCursor,
-  };
+const filteredPosts = computed(() => {
+  return posts.value.slice(1);
 });
 
 const loadMore = async () => {
-  data.value.loading = true;
+  isLoading.value = true;
 
-  await getPosts({
-    after: data.value.endCursor,
-  }).then((d) => {
-    data.value = {
-      loading: false,
-      hero: data.value.hero,
-      posts: data.value.posts.concat(d.posts.nodes),
-      hasNextPage: d.posts.pageInfo.hasNextPage,
-      endCursor: d.posts.pageInfo.endCursor,
-    };
+  await $fetch(API, {
+    query: { page: next.value },
+  }).then((data) => {
+    posts.value = posts.value.concat(data.posts);
+    next.value = data.next;
+    isLoading.value = false;
   });
 };
+
+onMounted(() => {
+  posts.value = data.value?.posts;
+  next.value = data.value?.next;
+});
 </script>
 
 <template>
   <SearchEngineOptimization title="Blog" />
-  <div v-if="data.posts.length > 0">
-    <PostHero v-if="data.hero" :post="data.hero" />
-    <PostCard v-for="post in data.posts" :post="post" :key="post.id" />
+
+  <div v-if="status === 'pending'"><AppLoading /></div>
+  <div v-else-if="status === 'success'">
+    <PostHero v-if="hero" :post="hero" />
+    <div v-if="filteredPosts.length > 0">
+      <PostCard v-for="post in filteredPosts" :post="post" :key="post.id" />
+    </div>
     <PostLoadMore
-      :hasNextPage="data.hasNextPage"
-      :loading="data.loading"
+      :hasNextPage="next"
+      :loading="isLoading"
       @load-more="loadMore"
     />
   </div>

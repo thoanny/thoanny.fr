@@ -7,7 +7,7 @@ useHead({
 </script>
 
 <template>
-  <main class="dark:bg-zinc-900 bg-gray-100">
+  <main class="">
     <AppHeader />
     <div class="container">
       <NuxtLoadingIndicator :height="4" color="#333333" />
@@ -19,12 +19,12 @@ useHead({
 </template>
 
 <style>
-@import "~/assets/sass/gutemberg.scss";
+@import "~/assets/sass/style.scss";
 html,
 body {
-  height: 100%;
+  height: auto;
   min-height: 100vh;
-  @apply bg-gray-100;
+  @apply bg-base-200;
 }
 
 .container {

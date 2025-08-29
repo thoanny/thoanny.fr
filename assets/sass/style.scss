@@ -1,0 +1,115 @@
+#content {
+  > * {
+    @apply my-8;
+  }
+
+  > p,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  > ul,
+  > ol,
+  > div,
+  > table,
+  > figure.image-block:not(.is-stretched) {
+    @apply max-w-2xl mx-auto;
+  }
+
+  ul {
+    @apply list-disc pl-6;
+  }
+
+  ol {
+    @apply list-decimal pl-6;
+  }
+
+  .list-checklist {
+    > div > div {
+      @apply pl-6;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-primary mt-12;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  kbd {
+    @apply kbd kbd-sm;
+  }
+
+  a:not(.btn) {
+    @apply underline;
+  }
+
+  .quote-block {
+    @apply py-5 px-14 font-semibold relative;
+
+    &:before,
+    &:after {
+      @apply block absolute text-primary;
+      font-family: Arial;
+      font-size: 6rem;
+      line-height: 0;
+    }
+
+    &:before {
+      @apply top-10 left-0;
+      content: "“";
+    }
+
+    &:after {
+      @apply bottom-0 right-0;
+      content: "”";
+    }
+
+    cite {
+      @apply text-base-content/50 font-normal;
+
+      &:before {
+        content: "— ";
+      }
+    }
+  }
+
+  table {
+    thead,
+    tfoot {
+      th,
+      td {
+        @apply bg-primary text-sm;
+      }
+    }
+  }
+}

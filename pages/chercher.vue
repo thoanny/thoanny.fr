@@ -18,7 +18,7 @@ const getSlug = (permalink) => {
 
 <template>
   <div>
-    <h1 class="text-4xl mb-6 font-bold dark:text-gray-200">Chercher</h1>
+    <h1 class="text-4xl mb-6 font-bold">Chercher</h1>
     <ais-instant-search :index-name="indexName" :search-client="algolia">
       <ais-search-box placeholder="Chercher un article...">
         <template v-slot:submit-icon>
@@ -29,7 +29,7 @@ const getSlug = (permalink) => {
         <template v-slot:item="{ item }">
           <NuxtLink
             :to="{ name: 'uri', params: { uri: getSlug(item.permalink) } }"
-            class="flex gap-4 mt-6 items-center group bg-white dark:bg-zinc-800 shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden pr-2 sm:pr-8"
+            class="flex gap-4 mt-6 items-center group bg-white shadow-lg hover:shadow-xl transition-shadow rounded-2xl overflow-hidden pr-2 sm:pr-8"
           >
             <div class="w-28 sm:w-36 h-full shrink-0 self-start">
               <img
@@ -40,9 +40,7 @@ const getSlug = (permalink) => {
               />
             </div>
 
-            <div
-              class="w-full flex flex-col gap-2 dark:text-gray-200 min-w-0 px-2 sm:px-5"
-            >
+            <div class="w-full flex flex-col gap-2 min-w-0 px-2 sm:px-5">
               <h2
                 class="transition-colors text-lg font-bold w-full truncate group-hover:text-primary"
               >
