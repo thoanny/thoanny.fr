@@ -21,7 +21,7 @@ defineProps(["post"]);
         v-if="post.imageUrl"
       />
       <div class="hero-overlay bg-black/60 z-20"></div>
-      <div class="hero-content text-center text-base-300 z-30">
+      <div class="hero-content text-center text-neutral-content z-30">
         <div class="max-w-2xl px-4">
           <div
             class="flex justify-center items-center gap-2 opacity-75 uppercase font-semibold mb-2"
