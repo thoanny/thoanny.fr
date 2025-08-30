@@ -9,7 +9,7 @@
     <a
       v-for="link in links"
       :key="link.id"
-      class="flex flex-col text-center items-center justify-center p-4 rounded-box w-full h-full gap-3 leading-5"
+      class="flex flex-col text-center items-center justify-center p-4 rounded-box w-full h-full gap-3 leading-5 dark:text-base-100"
       :class="[link.class, `type-${link.type}`]"
       :href="link.url"
       target="_blank"
