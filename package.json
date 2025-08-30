@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/algolia": "^1.10.2",
-    "@nuxtjs/mdc": "^0.13.5",
+    "@nuxtjs/mdc": "^0.17.2",
     "@nuxtjs/seo": "^2.0.0",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "^0.10.1",
