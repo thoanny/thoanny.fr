@@ -12,6 +12,7 @@
       :class="{
         'border-2 border-primary': block.data.withBorder,
       }"
+      loading="lazy"
       alt=""
     />
     <figcaption

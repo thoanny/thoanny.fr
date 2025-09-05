@@ -25,11 +25,29 @@
 </template>
 
 <script setup>
-import allCategories from "@/data/bookmarks_categories.json";
+import allCategories from "../data/bookmarks_categories.json";
 import { IconBookmark } from "@tabler/icons-vue";
 
 const categories = computed(() => {
   return allCategories.sort((a, b) => a.name.localeCompare(b.name));
+});
+
+const title = "Favoris de Thoanny";
+const description =
+  "Liens, outils, applications, cartes interactives et bases de données de divers jeux vidéo.";
+
+defineOgImageComponent("Page", {
+  title: title,
+  description: description,
+});
+
+useSeoMeta({
+  title: () => title,
+  ogTitle: () => title,
+  twitterTitle: () => title,
+  description: () => description,
+  ogDescription: () => description,
+  twitterDescription: () => description,
 });
 </script>
 

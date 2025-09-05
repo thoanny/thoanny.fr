@@ -16,20 +16,39 @@ import EmbedBlock from "~/components/blocks/EmbedBlock.vue";
 
 const route = useRoute();
 
-const { data, status } = await useFetch(
+const { data, status, error } = await useFetch(
   `https://api.thoanny.fr/blog/posts/${route.params.uri}`
 );
 
-// throw createError({
-//   statusCode: 404,
-//   statusMessage: "Page ou article introuvable",
-//   fatal: true,
-// });
+if (status.value === "error") {
+  if (error.value.statusCode == 404) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: "Page ou article introuvable",
+      fatal: true,
+    });
+  }
+}
 
 useHead({
   bodyAttrs: {
     class: "post",
   },
+});
+
+const title = data.value.seoTitle || data.value.title || "Blog de Thoanny";
+const description =
+  data.value.seoDescription ||
+  data.value.excerpt ||
+  "Suivez l’actualité de mes projets, découvrez des articles sur le streaming, les jeux vidéo, des recettes de cuisine ainsi que des trucs et astuces.";
+
+useSeoMeta({
+  title: () => title,
+  ogTitle: () => title,
+  twitterTitle: () => title,
+  description: () => description,
+  ogDescription: () => description,
+  twitterDescription: () => description,
 });
 
 const blocks = {
@@ -46,15 +65,15 @@ const blocks = {
   raw: RawBlock,
   embed: EmbedBlock,
 };
+
+defineOgImageComponent("BlogPost", {
+  title: data.value?.title,
+  image: data.value?.imageUrl,
+  date: data.value?.publishedAt,
+});
 </script>
 
 <template>
-  <SearchEngineOptimization
-    :title="data.title"
-    :description="data.excerpt"
-    :image="data.imageUrl"
-  />
-
   <div v-if="status === 'pending'"><AppLoading /></div>
   <div v-else-if="status === 'success'">
     <article class="text-lg post">

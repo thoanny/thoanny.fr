@@ -20,10 +20,6 @@ export default defineNuxtConfig({
     sources: ["/api/__sitemap__/urls"],
   },
 
-  ogImage: {
-    enabled: false,
-  },
-
   linkChecker: {
     enabled: false,
   },
@@ -31,8 +27,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { property: "og:type", content: "website" },
-        { property: "twitter:card", content: "summary_large_image" },
         { name: "apple-mobile-web-app-title", content: "Thoanny" },
         { name: "application-name", content: "Thoanny" },
         { name: "msapplication-TileColor", content: "#93c045" },
@@ -46,12 +40,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/seo",
-    "@nuxtjs/algolia",
-    "@nuxtjs/mdc",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/algolia", "@nuxtjs/seo"],
 
   algolia: {
     apiKey: process.env.ALGOLIA_SEARCH_API_KEY,

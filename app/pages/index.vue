@@ -1,13 +1,18 @@
 <script setup>
-const route = useRoute();
-
-const API = `https://api.thoanny.fr/blog/tags/${route.params.slug}`;
-
+const API = "https://api.thoanny.fr/blog/posts";
 const { data, status } = await useFetch(API);
 
 const posts = ref([]);
 const next = ref(false);
 const isLoading = ref(false);
+
+const hero = computed(() => {
+  return posts.value[0];
+});
+
+const filteredPosts = computed(() => {
+  return posts.value.slice(1);
+});
 
 const loadMore = async () => {
   isLoading.value = true;
@@ -21,16 +26,6 @@ const loadMore = async () => {
   });
 };
 
-console.log(data);
-
-// if (!d.category) {
-//   throw createError({
-//     statusCode: 404,
-//     statusMessage: "Catégorie introuvable",
-//     fatal: true,
-//   });
-// }
-
 onMounted(() => {
   posts.value = data.value?.posts;
   next.value = data.value?.next;
@@ -38,15 +33,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <SearchEngineOptimization :title="`Mot-clé : ${data.tag?.name}`" />
-
-  <div v-if="status === 'pending'">Chargement en cours...</div>
+  <div v-if="status === 'pending'"><AppLoading /></div>
   <div v-else-if="status === 'success'">
-    <h1 class="text-4xl mb-6 font-bold flex items-center gap-2">
-      Mot-clé&nbsp;: {{ data.tag.name }}
-    </h1>
-    <div v-if="posts.length > 0">
-      <PostCard v-for="post in posts" :post="post" :key="post.id" />
+    <PostHero v-if="hero" :post="hero" />
+    <div v-if="filteredPosts.length > 0">
+      <PostCard v-for="post in filteredPosts" :post="post" :key="post.id" />
     </div>
     <PostLoadMore
       :hasNextPage="next"
