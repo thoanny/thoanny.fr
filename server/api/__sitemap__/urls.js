@@ -2,8 +2,6 @@
 export default defineSitemapEventHandler(async () => {
   const data = await $fetch("https://api.thoanny.fr/blog/sitemap");
 
-  console.log("data:", data);
-
   const posts = await data.posts.map((p) => {
     return {
       loc: `/${p.slug}`,

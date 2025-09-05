@@ -136,8 +136,8 @@ import {
   IconCalculator,
   IconTrophy,
 } from "@tabler/icons-vue";
-import categories from "@/data/bookmarks_categories.json";
-import allLinks from "@/data/bookmarks_links.json";
+import categories from "../data/bookmarks_categories.json";
+import allLinks from "../data/bookmarks_links.json";
 
 const route = useRoute();
 const category = categories.find(

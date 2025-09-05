@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import allCategories from "@/data/bookmarks_categories.json";
+import allCategories from "../data/bookmarks_categories.json";
 import { IconBookmark } from "@tabler/icons-vue";
 
 const categories = computed(() => {

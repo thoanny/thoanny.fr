@@ -30,6 +30,10 @@ onMounted(() => {
   posts.value = data.value?.posts;
   next.value = data.value?.next;
 });
+
+defineOgImageComponent("NuxtSeo", {
+  title: "Bienvenue métas !",
+});
 </script>
 
 <template>

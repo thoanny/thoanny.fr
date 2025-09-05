@@ -15,9 +15,9 @@ const seoDescription = props.description
     <Meta name="description" :content="seoDescription" />
     <Meta property="og:title" :content="title" />
     <Meta property="og:description" :content="seoDescription" />
-    <Meta property="og:image" :content="seoImage" />
+    <!-- <Meta property="og:image" :content="seoImage" /> -->
     <Meta property="twitter:title" :content="title" />
     <Meta property="twitter:description" :content="seoDescription" />
-    <Meta property="twitter:image" :content="seoImage" />
+    <!-- <Meta property="twitter:image" :content="seoImage" /> -->
   </Head>
 </template>

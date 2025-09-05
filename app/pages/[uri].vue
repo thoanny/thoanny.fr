@@ -16,9 +16,19 @@ import EmbedBlock from "~/components/blocks/EmbedBlock.vue";
 
 const route = useRoute();
 
-const { data, status } = await useFetch(
+const { data, status, error } = await useFetch(
   `https://api.thoanny.fr/blog/posts/${route.params.uri}`
 );
+
+if (status.value === "error") {
+  if (error.value.statusCode == 404) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: "Page ou article introuvable",
+      fatal: true,
+    });
+  }
+}
 
 // throw createError({
 //   statusCode: 404,
@@ -31,6 +41,17 @@ useHead({
     class: "post",
   },
 });
+
+const title = data.value.seoTitle || data.value.title;
+const description = data.value?.seoDescription || data.value?.excerpt;
+
+useSeoMeta({
+  ogTitle: () => title,
+  description: () => description,
+  ogDescription: () => description,
+});
+
+console.log(description, data.value);
 
 const blocks = {
   paragraph: ParagraphBlock,
@@ -46,15 +67,15 @@ const blocks = {
   raw: RawBlock,
   embed: EmbedBlock,
 };
+
+defineOgImageComponent("BlogPost", {
+  title: data.value?.title,
+  image: data.value?.imageUrl,
+  date: data.value?.publishedAt,
+});
 </script>
 
 <template>
-  <SearchEngineOptimization
-    :title="data.title"
-    :description="data.excerpt"
-    :image="data.imageUrl"
-  />
-
   <div v-if="status === 'pending'"><AppLoading /></div>
   <div v-else-if="status === 'success'">
     <article class="text-lg post">

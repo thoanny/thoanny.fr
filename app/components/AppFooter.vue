@@ -34,11 +34,6 @@ const textLinks = [
     url: "/mentions-legales",
     title: "Mentions légales",
   },
-  {
-    id: "confidentialite",
-    url: "/politique-de-confidentialite",
-    title: "Confidentialité",
-  },
 ];
 </script>
 
