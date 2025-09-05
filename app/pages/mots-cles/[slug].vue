@@ -21,25 +21,21 @@ const loadMore = async () => {
   });
 };
 
-console.log(data);
-
-// if (!d.category) {
-//   throw createError({
-//     statusCode: 404,
-//     statusMessage: "Catégorie introuvable",
-//     fatal: true,
-//   });
-// }
-
 onMounted(() => {
   posts.value = data.value?.posts;
   next.value = data.value?.next;
 });
+
+const title = `Mot-clé : ${data.value.tag?.name}`;
+
+useSeoMeta({
+  title: () => title,
+  ogTitle: () => title,
+  twitterTitle: () => title,
+});
 </script>
 
 <template>
-  <SearchEngineOptimization :title="`Mot-clé : ${data.tag?.name}`" />
-
   <div v-if="status === 'pending'">Chargement en cours...</div>
   <div v-else-if="status === 'success'">
     <h1 class="text-4xl mb-6 font-bold flex items-center gap-2">

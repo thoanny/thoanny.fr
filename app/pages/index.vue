@@ -30,15 +30,9 @@ onMounted(() => {
   posts.value = data.value?.posts;
   next.value = data.value?.next;
 });
-
-defineOgImageComponent("NuxtSeo", {
-  title: "Bienvenue métas !",
-});
 </script>
 
 <template>
-  <SearchEngineOptimization title="Blog" />
-
   <div v-if="status === 'pending'"><AppLoading /></div>
   <div v-else-if="status === 'success'">
     <PostHero v-if="hero" :post="hero" />

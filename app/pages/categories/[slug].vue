@@ -35,11 +35,17 @@ onMounted(() => {
   posts.value = data.value?.posts;
   next.value = data.value?.next;
 });
+
+const title = `Catégorie : ${data.value.category?.name}`;
+
+useSeoMeta({
+  title: () => title,
+  ogTitle: () => title,
+  twitterTitle: () => title,
+});
 </script>
 
 <template>
-  <SearchEngineOptimization :title="`Catégorie : ${data.category?.name}`" />
-
   <div v-if="status === 'pending'"><AppLoading /></div>
   <div v-else-if="status === 'success'">
     <h1 class="text-4xl mb-6 font-bold flex items-center gap-2">

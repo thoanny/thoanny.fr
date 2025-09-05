@@ -30,28 +30,26 @@ if (status.value === "error") {
   }
 }
 
-// throw createError({
-//   statusCode: 404,
-//   statusMessage: "Page ou article introuvable",
-//   fatal: true,
-// });
-
 useHead({
   bodyAttrs: {
     class: "post",
   },
 });
 
-const title = data.value.seoTitle || data.value.title;
-const description = data.value?.seoDescription || data.value?.excerpt;
+const title = data.value.seoTitle || data.value.title || "Blog de Thoanny";
+const description =
+  data.value.seoDescription ||
+  data.value.excerpt ||
+  "Suivez l’actualité de mes projets, découvrez des articles sur le streaming, les jeux vidéo, des recettes de cuisine ainsi que des trucs et astuces.";
 
 useSeoMeta({
+  title: () => title,
   ogTitle: () => title,
+  twitterTitle: () => title,
   description: () => description,
   ogDescription: () => description,
+  twitterDescription: () => description,
 });
-
-console.log(description, data.value);
 
 const blocks = {
   paragraph: ParagraphBlock,
