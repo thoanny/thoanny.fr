@@ -2,7 +2,11 @@
 import { IconCalendarMonth, IconFolderOpen } from "@tabler/icons-vue";
 import { stripExcerpt } from "~/utils/strip-html.js";
 
-defineProps(["post"]);
+const props = defineProps(["post"]);
+
+const categories = computed(() => {
+  return props.post.categories.map((category) => category.name).join(", ");
+});
 </script>
 
 <template>
@@ -51,9 +55,7 @@ defineProps(["post"]);
 
         <span class="flex items-center gap-1" v-if="post.categories">
           <IconFolderOpen class="h-6 w-6" stroke-width="1.5" />
-          <span v-for="category in post.categories" :key="category.id">
-            {{ category.name }}
-          </span>
+          <span v-text="categories"> </span>
         </span>
       </div>
     </div>

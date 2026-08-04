@@ -1,5 +1,15 @@
 <script setup>
-import { IconBookmark, IconNotebook } from "@tabler/icons-vue";
+import {
+  IconBookmark,
+  IconBulb,
+  IconChefHat,
+  IconDeviceGamepad2,
+  IconDotsFilled,
+  IconNews,
+  IconNotebook,
+  IconTools,
+  IconVideo,
+} from "@tabler/icons-vue";
 
 const modal = ref();
 
@@ -10,6 +20,55 @@ const links = [
     title: "Blog",
     hideTitle: false,
     icon: IconNotebook,
+    more: false,
+  },
+  {
+    id: "en-coulisses",
+    to: { name: "categories-slug", params: { slug: "en-coulisses" } },
+    title: "En coulisses",
+    hideTitle: false,
+    icon: IconNews,
+    more: false,
+  },
+  {
+    id: "recettes",
+    to: { name: "categories-slug", params: { slug: "recettes" } },
+    title: "Recettes",
+    hideTitle: false,
+    icon: IconChefHat,
+    more: false,
+  },
+  {
+    id: "jeux-video",
+    to: { name: "categories-slug", params: { slug: "jeux-video" } },
+    title: "Jeux vidéo",
+    hideTitle: false,
+    icon: IconDeviceGamepad2,
+    more: true,
+  },
+  {
+    id: "projets",
+    to: { name: "categories-slug", params: { slug: "projets" } },
+    title: "Projets",
+    hideTitle: false,
+    icon: IconTools,
+    more: true,
+  },
+  {
+    id: "streaming",
+    to: { name: "categories-slug", params: { slug: "streaming" } },
+    title: "Streaming",
+    hideTitle: false,
+    icon: IconVideo,
+    more: true,
+  },
+  {
+    id: "trucs-et-astuces",
+    to: { name: "categories-slug", params: { slug: "trucs-et-astuces" } },
+    title: "Trucs et astuces",
+    hideTitle: false,
+    icon: IconBulb,
+    more: true,
   },
   {
     id: "bookmarks",
@@ -17,16 +76,28 @@ const links = [
     title: "Favoris",
     hideTitle: false,
     icon: IconBookmark,
+    more: false,
   },
   // TODO Ajouter une recherche JS, créer un webpoint API pour lister les contenus utiles
   // {
   //   id: "chercher",
   //   to: { name: "chercher" },
   //   title: "Chercher",
-  //   hideTitle: false,
+  //   hideTitle: true,
   //   icon: IconSearch,
+  //   more: false,
   // },
 ];
+
+const filteredLinks = computed(() => {
+  return links.filter((link) => !link.more);
+});
+
+const moreLinks = computed(() => {
+  return links.filter((link) => link.more);
+});
+
+const popoverEl = ref();
 </script>
 
 <template>
@@ -41,7 +112,7 @@ const links = [
         class="absolute top-0 right-0 hidden gap-4 h-32 items-center font-semibold text-white uppercase tracking-wider min-[990px]:flex"
       >
         <NuxtLink
-          v-for="link in links"
+          v-for="link in filteredLinks"
           :key="link.id"
           :to="link.to"
           class="flex gap-1 items-center group"
@@ -54,6 +125,33 @@ const links = [
             {{ link.title }}
           </span>
         </NuxtLink>
+
+        <button
+          class="btn btn-primary btn-ghost btn-circle"
+          popovertarget="popover-1"
+          style="anchor-name: --anchor-menu"
+        >
+          <IconDotsFilled class="text-primary-content" />
+        </button>
+        <ul
+          class="dropdown dropdown-end menu w-54 rounded-box bg-base-100 text-base-content shadow-sm mt-2"
+          popover
+          id="popover-1"
+          style="position-anchor: --anchor-menu"
+          ref="popoverEl"
+        >
+          <li v-for="link in moreLinks" :key="link.id">
+            <NuxtLink
+              :to="link.to"
+              class="flex gap-1 items-center group"
+              active-class="bg-primary text-primary-content"
+              @click="popoverEl.hidePopover()"
+            >
+              <component :is="link.icon" class="h-7 w-7" stroke-width="1.75" />
+              {{ link.title }}
+            </NuxtLink>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
