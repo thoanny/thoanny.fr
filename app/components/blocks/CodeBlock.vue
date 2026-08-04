@@ -1,5 +1,5 @@
 <template>
-  <div class="mockup-code">
+  <div class="mockup-code my-6">
     <pre>{{ block.data.code }}</pre>
   </div>
 </template>

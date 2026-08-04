@@ -1,6 +1,8 @@
+import tailwindcss from "@tailwindcss/vite";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: ["~/assets/main.css"],
 
   site: {
     url: "https://thoanny.fr",
@@ -40,7 +42,17 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo"],
+  modules: ["@nuxtjs/seo", "@kgierke/nuxt-matomo"],
+
+  matomo: {
+    host: "https://analytics.an-d.me",
+    siteId: 15,
+    disableCookies: true,
+  },
 
   compatibilityDate: "2025-02-24",
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

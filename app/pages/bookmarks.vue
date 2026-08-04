@@ -25,8 +25,8 @@
 </template>
 
 <script setup>
-import allCategories from "../data/bookmarks_categories.json";
 import { IconBookmark } from "@tabler/icons-vue";
+import allCategories from "../data/bookmarks_categories.json";
 
 const categories = computed(() => {
   return allCategories.sort((a, b) => a.name.localeCompare(b.name));
@@ -51,19 +51,28 @@ useSeoMeta({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+@reference 'tailwindcss';
+
 .bookmarks-menu {
   a {
-    @apply aspect-square bg-neutral text-neutral-content w-full h-full flex items-center justify-center text-center rounded-box font-bold text-lg p-2 leading-5 flex-col gap-2 transition-all;
+    @apply aspect-square w-full h-full flex items-center justify-center text-center font-bold text-lg p-2 leading-5 flex-col gap-2 transition-all;
+
+    background: var(--color-neutral);
+    color: var(--color-neutral-content);
+    border-radius: var(--radius-box);
 
     &:hover,
     &:focus,
     &.router-link-active {
-      @apply bg-base-100 shadow text-base-content;
+      @apply shadow;
+      background-color: var(--color-base-100);
+      color: var(--color-base-content);
     }
 
     &.router-link-active {
-      @apply text-base-content shadow-lg;
+      @apply shadow-lg;
+      color: var(--color-base-content);
     }
 
     img {

@@ -1,11 +1,11 @@
 <template>
   <a
     :href="block.data.file.url"
-    class="btn btn-primary text-base"
+    class="btn btn-primary text-base my-6"
     :download="block.data.file.name"
     target="_blank"
   >
-    <IconDownload />
+    <IconDownload class="size-5" />
     {{ block.data.title || "Télécharger" }}
   </a>
 </template>

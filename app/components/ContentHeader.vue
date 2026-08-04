@@ -1,11 +1,11 @@
 <script setup>
 import {
   IconArrowNarrowLeft,
-  IconCalendarMonth,
-  IconFolderOpen,
-  IconBrandX,
   IconBrandFacebook,
+  IconBrandX,
+  IconCalendarMonth,
   IconCornerLeftUp,
+  IconFolderOpen,
 } from "@tabler/icons-vue";
 import { stripImageCaption } from "~/utils/strip-html.js";
 import { nbsp } from "~/utils/text.js";
@@ -47,7 +47,7 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
           class="flex gap-6 xl:gap-6 flex-col items-end justify-start xl:mb-6 pr-4 xl:mt-6 w-full"
         >
           <h1
-            class="w-full text-3xl font-bold leading-12 xl:text-base-100 text-center xl:text-left"
+            class="w-full text-3xl font-bold leading-8 xl:text-base-100 text-center xl:text-left"
           >
             {{ nbsp(data.title) }}
           </h1>
@@ -75,7 +75,7 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
                     year: "numeric",
                     month: "short",
                     day: "numeric",
-                  }
+                  },
                 )
               }}
             </li>
@@ -127,11 +127,10 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
     </template>
     <template v-else>
       <h1
-        class="w-full text-3xl font-bold leading-12 text-center xl:text-left max-w-2xl mx-auto text-5xl"
+        class="w-full text-3xl font-bold leading-8 text-center xl:text-left max-w-2xl mx-auto text-5xl"
       >
         {{ nbsp(content.title) }}
       </h1>
     </template>
-    <!-- xxx -->
   </header>
 </template>

@@ -117,23 +117,23 @@
 
 <script setup>
 import {
-  IconFileTypeDoc,
-  IconListCheck,
-  IconBrandWikipedia,
-  IconLink,
-  IconBrandTwitch,
-  IconBrandYoutube,
-  IconSwords,
   IconApps,
-  IconHanger,
-  IconTools,
-  IconClock,
-  IconCalendarWeek,
-  IconFish,
-  IconMap,
-  IconDatabase,
   IconBrandDiscord,
+  IconBrandTwitch,
+  IconBrandWikipedia,
+  IconBrandYoutube,
   IconCalculator,
+  IconCalendarWeek,
+  IconClock,
+  IconDatabase,
+  IconFileTypeDoc,
+  IconFish,
+  IconHanger,
+  IconLink,
+  IconListCheck,
+  IconMap,
+  IconSwords,
+  IconTools,
   IconTrophy,
 } from "@tabler/icons-vue";
 import categories from "../data/bookmarks_categories.json";
@@ -141,7 +141,7 @@ import allLinks from "../data/bookmarks_links.json";
 
 const route = useRoute();
 const category = categories.find(
-  (category) => route.params.slug === category.slug
+  (category) => route.params.slug === category.slug,
 );
 
 if (!category) {
@@ -178,6 +178,6 @@ const textColor = (type) => {
   background: #35bfdb;
 }
 .type-thoanny {
-  @apply bg-primary;
+  background: var(--color-primary);
 }
 </style>

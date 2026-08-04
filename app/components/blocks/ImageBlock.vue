@@ -2,7 +2,7 @@
   <figure
     class="image-block"
     :class="{
-      'is-stretched': block.data.stretched,
+      'md:-mx-20 lg:-mx-40 xl:-mx-50': block.data.stretched,
       'bg-primary p-4 rounded-lg': block.data.withBackground,
     }"
   >
@@ -15,10 +15,7 @@
       loading="lazy"
       alt=""
     />
-    <figcaption
-      v-if="block.data.caption"
-      class="text-base italic text-center py-2"
-    >
+    <figcaption v-if="block.data.caption" class="text-base italic text-center">
       {{ block.data.caption }}
     </figcaption>
   </figure>

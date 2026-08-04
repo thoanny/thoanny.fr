@@ -1,7 +1,7 @@
 <template>
-  <figure>
+  <figure class="md:-mx-20 lg:-mx-40 xl:-mx-50 my-6">
     <iframe
-      :src="block.data.embed"
+      :src="youtubeNoCookieUrl"
       frameborder="0"
       class="w-full rounded-lg overflow-hidden aspect-video"
     ></iframe>
@@ -15,5 +15,9 @@
 </template>
 
 <script setup>
-defineProps(["block"]);
+const props = defineProps(["block"]);
+const youtubeNoCookieUrl = props.block.data.embed.replace(
+  "https://www.youtube.com/",
+  "https://www.youtube-nocookie.com/",
+);
 </script>

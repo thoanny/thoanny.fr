@@ -1,23 +1,22 @@
 <script setup>
-import { nbsp } from "~/utils/text.js";
-
-import ParagraphBlock from "~/components/blocks/ParagraphBlock.vue";
-import HeaderBlock from "~/components/blocks/HeaderBlock.vue";
-import QuoteBlock from "~/components/blocks/QuoteBlock.vue";
-import WarningBlock from "~/components/blocks/WarningBlock.vue";
-import DelimiterBlock from "~/components/blocks/DelimiterBlock.vue";
-import ListBlock from "~/components/blocks/ListBlock.vue";
-import TableBlock from "~/components/blocks/TableBlock.vue";
-import ImageBlock from "~/components/blocks/ImageBlock.vue";
 import AttachesBlock from "~/components/blocks/AttachesBlock.vue";
+import ButtonBlock from "~/components/blocks/ButtonBlock.vue";
 import CodeBlock from "~/components/blocks/CodeBlock.vue";
-import RawBlock from "~/components/blocks/RawBlock.vue";
+import DelimiterBlock from "~/components/blocks/DelimiterBlock.vue";
 import EmbedBlock from "~/components/blocks/EmbedBlock.vue";
+import HeaderBlock from "~/components/blocks/HeaderBlock.vue";
+import ImageBlock from "~/components/blocks/ImageBlock.vue";
+import ListBlock from "~/components/blocks/ListBlock.vue";
+import ParagraphBlock from "~/components/blocks/ParagraphBlock.vue";
+import QuoteBlock from "~/components/blocks/QuoteBlock.vue";
+import RawBlock from "~/components/blocks/RawBlock.vue";
+import TableBlock from "~/components/blocks/TableBlock.vue";
+import WarningBlock from "~/components/blocks/WarningBlock.vue";
 
 const route = useRoute();
 
 const { data, status, error } = await useFetch(
-  `https://api.thoanny.fr/blog/posts/${route.params.uri}`
+  `https://api.thoanny.fr/blog/posts/${route.params.uri}`,
 );
 
 if (status.value === "error") {
@@ -64,6 +63,7 @@ const blocks = {
   code: CodeBlock,
   raw: RawBlock,
   embed: EmbedBlock,
+  button: ButtonBlock,
 };
 
 defineOgImageComponent("BlogPost", {
@@ -82,17 +82,21 @@ defineOgImageComponent("BlogPost", {
         id="content"
         class="xl:bg-base-200 xl:pt-16 xl:rounded-2xl xl:-mt-12 min-h-28"
       >
-        <template
-          v-for="block in data.content.blocks"
-          :key="block.id"
-          v-if="data.content?.blocks"
+        <div
+          class="prose prose-slate lg:prose-lg prose-headings:text-primary prose-li:my-0 prose-table:my-0 prose-thead:bg-primary prose-th:text-base-content/60 prose-th:px-6 prose-th:py-4 prose-td:px-6 mx-auto"
         >
-          <component
-            v-if="blocks[block.type]"
-            :is="blocks[block.type]"
-            :block="block"
-          />
-        </template>
+          <template
+            v-for="block in data.content.blocks"
+            :key="block.id"
+            v-if="data.content?.blocks"
+          >
+            <component
+              v-if="blocks[block.type]"
+              :is="blocks[block.type]"
+              :block="block"
+            />
+          </template>
+        </div>
       </div>
 
       <!-- [ ] Faire à la main -->

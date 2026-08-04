@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-base-100 rounded-box overflow-hidden shadow-lg bg-base-100">
+  <div
+    class="bg-base-100 rounded-box overflow-x-auto shadow-lg bg-base-100 whitespace-nowrap my-6"
+    :class="{ 'md:-mx-20 lg:-mx-40 xl:-mx-50': block.data.stretched }"
+  >
     <table class="table table-lg">
       <thead v-if="headings">
         <tr>

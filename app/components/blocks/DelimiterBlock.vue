@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center py-6 gap-2">
+  <div class="flex justify-center py-6 gap-2 my-6">
     <IconAsterisk stroke-width="3" class="text-primary" />
     <IconAsterisk stroke-width="3" class="text-primary" />
     <IconAsterisk stroke-width="3" class="text-primary" />

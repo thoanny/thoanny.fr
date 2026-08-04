@@ -3,7 +3,7 @@
     :items="block.data.items"
     :style="block.data.style"
     :start="block.data.meta.start || 1"
-    :class="[`list-${block.data.style}`]"
+    :class="[`list-${block.data.style} my-6`]"
   />
 </template>
 
