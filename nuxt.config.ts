@@ -40,15 +40,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/algolia", "@nuxtjs/seo"],
-
-  algolia: {
-    apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
-    applicationId: process.env.ALGOLIA_APPLICATION_ID,
-    instantSearch: {
-      theme: "reset",
-    },
-  },
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/seo"],
 
   compatibilityDate: "2025-02-24",
 });

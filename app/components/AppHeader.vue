@@ -1,5 +1,5 @@
 <script setup>
-import { IconNotebook, IconSearch, IconBookmark } from "@tabler/icons-vue";
+import { IconBookmark, IconNotebook } from "@tabler/icons-vue";
 
 const modal = ref();
 
@@ -18,7 +18,7 @@ const links = [
     hideTitle: false,
     icon: IconBookmark,
   },
-  // [ ] Ajouter Algolia sur API
+  // TODO Ajouter une recherche JS, créer un webpoint API pour lister les contenus utiles
   // {
   //   id: "chercher",
   //   to: { name: "chercher" },
