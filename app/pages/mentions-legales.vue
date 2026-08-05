@@ -1,5 +1,8 @@
 <template>
-  <div id="content">
+  <div
+    id="content"
+    class="prose prose-slate lg:prose-lg prose-headings:text-primary prose-li:my-0 prose-table:my-0 prose-thead:bg-primary prose-th:text-base-content/60 prose-th:px-6 prose-th:py-4 prose-td:px-6 mx-auto"
+  >
     <h1>Mentions légales</h1>
 
     <h2>Édition du site</h2>
@@ -155,10 +158,4 @@
   </div>
 </template>
 
-<script setup>
-useHead({
-  bodyAttrs: {
-    class: "post",
-  },
-});
-</script>
+<script setup></script>
