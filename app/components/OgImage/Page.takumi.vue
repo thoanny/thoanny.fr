@@ -7,9 +7,7 @@ defineProps(["title", "description"]);
     <div class="flex h-full w-full">
       <div class="flex flex-col items-center w-full h-full">
         <div>
-          <h1
-            class="block text-6xl pt-12 px-24 pb-4 font-black text-center line-clamp-2"
-          >
+          <h1 class="block text-6xl pt-12 px-24 pb-4 font-black text-center">
             {{ title }}
           </h1>
         </div>

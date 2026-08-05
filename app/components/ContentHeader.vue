@@ -17,7 +17,7 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
 </script>
 
 <template>
-  <header>
+  <header class="mb-6 xl:mb-0">
     <template v-if="type === 'post'">
       <div class="flex flex-col xl:flex-row gap-8 items-end flex-col-reverse">
         <figure
@@ -64,7 +64,7 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
           </div>
 
           <ul
-            class="w-full justify-center xl:justify-start flex flex-wrap gap-4 whitespace-nowrap text-sm uppercase font-semibold xl:text-base-100"
+            class="w-full justify-center xl:justify-start flex flex-wrap gap-4 whitespace-nowrap text-sm uppercase font-semibold text-base-content/50 xl:text-base-100"
           >
             <li class="flex gap-2 items-center">
               <IconCalendarMonth class="h-6 w-6" stroke-width="1.5" />
@@ -103,9 +103,9 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
                 "
                 rel="noopener noreferrer"
                 target="_blank"
-                class="btn btn-circle btn-secondary border-0 text-base-100"
+                class="btn btn-circle btn-secondary"
               >
-                <IconBrandX class="w-7 h-7" stroke-width="1.5" />
+                <IconBrandX class="size-6" stroke-width="1.5" />
               </a>
             </li>
             <li>
@@ -116,9 +116,9 @@ defineProps(["type", "data", "content"]); // [ ] Supprimer content
                 "
                 rel="noopener noreferrer"
                 target="_blank"
-                class="btn btn-circle btn-secondary border-0 text-base-100"
+                class="btn btn-circle btn-secondary"
               >
-                <IconBrandFacebook class="h-7 w-7" stroke-width="1.5" />
+                <IconBrandFacebook class="size-6" stroke-width="1.5" />
               </a>
             </li>
           </ul>

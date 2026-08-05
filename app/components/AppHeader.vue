@@ -117,7 +117,7 @@ const popoverEl = ref();
           :to="link.to"
           class="flex gap-1 items-center group"
         >
-          <component :is="link.icon" class="h-7 w-7" stroke-width="1.75" />
+          <component :is="link.icon" class="size-7" stroke-width="1.75" />
           <span
             class="group-hover:underline group-[.router-link-active]:underline underline-offset-2 decoration-2"
             v-if="!link.hideTitle"
@@ -143,12 +143,12 @@ const popoverEl = ref();
           <li v-for="link in moreLinks" :key="link.id">
             <NuxtLink
               :to="link.to"
-              class="flex gap-1 items-center group"
+              class="flex gap-2 items-center group"
               active-class="bg-primary text-primary-content"
               @click="popoverEl.hidePopover()"
             >
-              <component :is="link.icon" class="h-7 w-7" stroke-width="1.75" />
-              {{ link.title }}
+              <component :is="link.icon" class="size-6" stroke-width="1.75" />
+              <span class="">{{ link.title }}</span>
             </NuxtLink>
           </li>
         </ul>
@@ -191,7 +191,7 @@ const popoverEl = ref();
           >
             <component
               :is="link.icon"
-              class="h-6 w-6 text-primary"
+              class="size-7 text-primary"
               stroke-width="2"
             />
             {{ link.title }}

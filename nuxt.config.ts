@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/seo", "@kgierke/nuxt-matomo"],
+  modules: ["@nuxtjs/seo", "@kgierke/nuxt-matomo", "@nuxt/fonts"],
 
   matomo: {
     host: "https://analytics.an-d.me",

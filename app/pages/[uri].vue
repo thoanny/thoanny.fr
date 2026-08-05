@@ -66,7 +66,7 @@ const blocks = {
   button: ButtonBlock,
 };
 
-defineOgImageComponent("BlogPost", {
+defineOgImage("BlogPost", {
   title: data.value?.title,
   image: data.value?.imageUrl,
   date: data.value?.publishedAt,
@@ -80,7 +80,7 @@ defineOgImageComponent("BlogPost", {
       <ContentHeader type="post" :data="data" />
       <div
         id="content"
-        class="xl:bg-base-200 xl:pt-16 xl:rounded-2xl xl:-mt-12 min-h-28"
+        class="xl:bg-base-200 xl:pt-24 xl:rounded-2xl xl:-mt-12 min-h-28"
       >
         <div
           class="prose prose-slate lg:prose-lg prose-headings:text-primary prose-li:my-0 prose-table:my-0 prose-thead:bg-primary prose-th:text-base-content/60 prose-th:px-6 prose-th:py-4 prose-td:px-6 mx-auto"

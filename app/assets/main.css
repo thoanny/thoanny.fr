@@ -2,6 +2,8 @@
 @plugin "@tailwindcss/typography";
 @plugin "daisyui";
 
+@source inline('{row,col}-span-{1..6}');
+
 @plugin "daisyui" {
   themes:
     thoanny --default,
@@ -78,11 +80,23 @@
   --noise: 0;
 }
 
+:root {
+  --font-sans: "Noto Sans", sans-serif;
+}
+
 html,
 body {
   height: auto;
-  min-height: 100vh;
+  min-height: 100dvh;
   @apply bg-base-200;
+}
+
+.btn {
+  @apply font-normal;
+}
+
+.font-semibold {
+  @apply tracking-wider;
 }
 
 .container {

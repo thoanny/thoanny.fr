@@ -9,7 +9,7 @@ const title = "Blog de Thoanny";
 const description =
   "Suivez l’actualité de mes projets, découvrez des articles sur le streaming, les jeux vidéo, des recettes de cuisine ainsi que des trucs et astuces.";
 
-defineOgImageComponent("Page", {
+defineOgImage("Page", {
   title: title,
   description: description,
 });

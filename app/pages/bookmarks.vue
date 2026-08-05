@@ -36,7 +36,7 @@ const title = "Favoris de Thoanny";
 const description =
   "Liens, outils, applications, cartes interactives et bases de données de divers jeux vidéo.";
 
-defineOgImageComponent("Page", {
+defineOgImage("Page", {
   title: title,
   description: description,
 });
