@@ -41,7 +41,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "/tarteaucitron/tarteaucitron.min.js",
+          src: "/tarteaucitron.js/tarteaucitron.min.js",
         },
         {
           src: "/tarteaucitron.config.js",
