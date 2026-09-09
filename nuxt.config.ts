@@ -39,6 +39,14 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
         { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#93c045" },
       ],
+      script: [
+        {
+          src: "/tarteaucitron/tarteaucitron.min.js",
+        },
+        {
+          src: "/tarteaucitron.config.js",
+        },
+      ],
     },
   },
 

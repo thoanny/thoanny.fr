@@ -128,9 +128,8 @@
     <p>
       Pour plus d’informations sur la façon dont nous traitons vos données (type
       de données, finalité, destinataire…), lisez notre&nbsp;<a
-        href="/politique-de-confidentialite"
-        data-type="page"
-        data-id="384"
+        href="https://api.thoanny.fr/legal-notice"
+        target="_blank"
         >Politique de confidentialité</a
       >.
     </p>
@@ -144,7 +143,11 @@
       vers&nbsp;<strong>https://thoanny.fr</strong>.
     </p>
 
-    <p>Ce site n’utilise pas de cookie.</p>
+    <p>
+      Gérez les cookies depuis le "<a href="#tarteaucitron"
+        >Panneau de gestion des cookies</a
+      >".
+    </p>
 
     <h2>Droit applicable et attribution de juridiction</h2>
 
