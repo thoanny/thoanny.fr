@@ -41,10 +41,9 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "/tarteaucitron.js/tarteaucitron.min.js",
-        },
-        {
-          src: "/tarteaucitron.config.js",
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1702694868078739",
+          async: true,
+          crossorigin: "anonymous",
         },
       ],
     },
