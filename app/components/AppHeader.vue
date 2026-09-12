@@ -5,6 +5,7 @@ import {
   IconChefHat,
   IconDeviceGamepad2,
   IconDotsFilled,
+  IconFlame,
   IconNews,
   IconNotebook,
   IconTools,
@@ -77,6 +78,13 @@ const links = [
     hideTitle: false,
     icon: IconBookmark,
     more: false,
+  },
+  {
+    id: "t-potes",
+    to: { name: "t-potes" },
+    title: "T-potes",
+    hideTitle: false,
+    icon: IconFlame,
   },
   // TODO Ajouter une recherche JS, créer un webpoint API pour lister les contenus utiles
   // {

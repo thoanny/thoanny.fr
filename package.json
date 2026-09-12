@@ -28,5 +28,13 @@
     "daisyui": "^5.7.15",
     "nuxtseo-layer-devtools": "^5.3.10",
     "sass": "^1.102.0"
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "sharp@0.35.4": true,
+    "@parcel/watcher@2.6.0": true,
+    "vue-demi@0.14.10": true,
+    "esbuild@0.27.2": true,
+    "esbuild@0.28.2": true
   }
 }
