@@ -41,11 +41,6 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1702694868078739",
-          async: true,
-          crossorigin: "anonymous",
-        },
-        {
           src: "https://cdn-cookieyes.com/client_data/4c6d6567c5167691cea59bb42bcb5341/script.js",
           id: "cookieyes",
         },
