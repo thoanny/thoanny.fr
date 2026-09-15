@@ -3,12 +3,8 @@ import { IconFlame, IconHearts } from "@tabler/icons-vue";
 
 const { data } = await useFetch("https://api.thoanny.fr/tpotes");
 
-const twitchTpotes = computed(() => {
-  return data.value.tpotes.filter((tpote) => tpote.network === "twitch");
-});
-
-const patreonTpotes = computed(() => {
-  return data.value.tpotes.filter((tpote) => tpote.network === "patreon");
+const tPotes = computed(() => {
+  return data.value.tpotes.sort((a, b) => a.name.localeCompare(b.name));
 });
 
 useSeoMeta({
@@ -55,10 +51,9 @@ useSeoMeta({
     </h2>
     <div class="flex flex-wrap gap-2 justify-center mb-6 mt-2">
       <span
-        v-for="tpote in twitchTpotes"
+        v-for="tpote in tPotes"
         :key="tpote.id"
         class="badge badge-primary badge-lg"
-        :class="{ 'badge-outline bg-white': !tpote.active }"
       >
         {{ tpote.name }}
       </span>
