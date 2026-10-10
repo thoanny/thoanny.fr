@@ -40,9 +40,15 @@ export default defineNuxtConfig({
         { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#93c045" },
       ],
       script: [
+        // {
+        //   src: "https://cdn-cookieyes.com/client_data/4c6d6567c5167691cea59bb42bcb5341/script.js",
+        //   id: "cookieyes",
+        // },
         {
-          src: "https://cdn-cookieyes.com/client_data/4c6d6567c5167691cea59bb42bcb5341/script.js",
-          id: "cookieyes",
+          id: "Cookiebot",
+          src: "https://consent.cookiebot.com/uc.js",
+          "data-id": "c1f84a90-6bfd-4852-a093-f40b257db740",
+          "data-blockingmode": "auto",
         },
       ],
     },
