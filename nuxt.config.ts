@@ -57,7 +57,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/seo", "@kgierke/nuxt-matomo", "@nuxt/fonts"],
 
   matomo: {
-    host: "https://analytics.an-d.me",
+    host: "https://analytics.thoanny.fr",
     siteId: 15,
     disableCookies: true,
   },
